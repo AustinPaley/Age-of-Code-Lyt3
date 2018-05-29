@@ -8,4 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsContainer = document.getElementById("actions-container");
   const actionsList = document.getElementById("actions-list");
 
+  
+
 });
