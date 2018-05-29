@@ -1,5 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const URL = `http://localhost:3000`;
+
+  //ACTION GET
+  fetch('http://localhost:3000/api/v1/actions')
+  .then(response => response.json())
+  .then(jsondata => jsondata.forEach( actionObj => {createActions(actionObj)} ))
+  //
+
+
+  //ACTION OBJECT PARSER
+  function createActions(actionObj){
+    console.log(actionObj)
+    let button = document.createElement("BUTTON")
+    button.setAttribute("class", "action")
+    button.setAttribute("id", `skill${actionObj.id}`)
+    button.innerHTML = actionObj.name
+    buttons.appendChild(button)
+
+    let skill = document.getElementById(`skill${actionObj.id}`)
+    skill.addEventListener("click",() => skillLogic(val, skill, actionObj.value, actionObj.cooldown))
+  }
+  //
+
+  //USER GET
+  fetch('http://localhost:3000/api/v1/users')
+  .then(response => response.json())
+  .then(jsondata => jsondata.forEach( userObj => {createUsers(userObj)} ))
+  //
+
+  //USER OJECT PARSER
+  function createUsers(userObj){
+    console.log(userObj)
+  }
+  //
 
   const mainContainer = document.getElementById("main-container");
   const userWindow = document.getElementById("user-window");
@@ -10,17 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   let val = document.getElementById('val')
-
-  let skill1 = document.getElementById('skill1')
-  skill1.addEventListener("click",() => skillLogic(val, skill1, 1, 2000))
-  let skill2 = document.getElementById('skill2')
-  skill2.addEventListener("click",() => skillLogic(val, skill2, 3, 3000))
-  let skill3 = document.getElementById('skill3')
-  skill3.addEventListener("click",() => skillLogic(val, skill3, 4, 2000))
-  let skill4 = document.getElementById('skill4')
-  skill4.addEventListener("click",() => skillLogic(val, skill4, 25, 5000))
-  let skill5 = document.getElementById('skill5')
-  skill5.addEventListener("click",() => skillLogic(val, skill5, 30, 3000))
 
 
   function skillLogic(mathTarget, button, value, cd){
