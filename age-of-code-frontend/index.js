@@ -9,10 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //ACTION OBJECT PARSER
   function createActions(actionObj){
+<<<<<<< HEAD
     let button = document.createElement("BUTTON")
     button.setAttribute("class", "action")
+=======
+    console.log(actionObj)
+    let button = document.createElement("div")
+    button.setAttribute("class", "action actionButton")
+>>>>>>> 579f6c75808bbba0d8e9d085935364a03337c9a4
     button.setAttribute("id", `skill${actionObj.id}`)
-    button.innerHTML = actionObj.name
+    button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
+
     buttons.appendChild(button)
 
     let skill = document.getElementById(`skill${actionObj.id}`)
@@ -83,12 +90,31 @@ document.addEventListener('DOMContentLoaded', function () {
   function skillLogic(mathTarget, button, value, cd){
     cooldown(button, cd)
     doMath(mathTarget, value)
-    clicky(value)
+    clicky(cd)
   }
 
   function doMath(target, value){
     target.innerHTML = parseInt(target.innerHTML) + value
   }
+
+  function clicky(num) {
+
+    var elem = event.target
+    var width = 1;
+    var id = setInterval(frame, (num/100));
+    elem.setAttribute("style", "opacity:.7;");
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        elem.setAttribute("style", "opacity:1;");
+        elem.style.width = '100%';
+      } else {
+        width++;
+        elem.style.width = width + '%';
+      }
+    }
+  }
+
 
   function cooldown(button, cd){
     button.setAttribute("disabled",true)

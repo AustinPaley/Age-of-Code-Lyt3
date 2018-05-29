@@ -58,7 +58,6 @@ button{
   color: white;
 }
 
-
 html {
   overflow:   scroll;
 }
@@ -68,21 +67,24 @@ html {
     background: transparent; /* make scrollbar transparent */
 }
 
-#actionButton{
+.actionButton{
   height:50px;
   width:100px;
   background-color:black;
   text-align:center;
-  vertical-align: middle;
+  display:inline-block;
+  margin-left:10px;
+  white-space: nowrap;
 }
 
-#actionBar{
-  width:1%;
+.actionBar{
   height:100%;
+  width:100px;
   background-color:red;
   z-index:-50;
   color:white;
   text-align:center;
+  overflow:hidden;
 }
 
 #username{
