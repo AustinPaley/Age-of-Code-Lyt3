@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsContainer = document.getElementById("actions-container");
   const actionsList = document.getElementById("actions-list");
 
+  
 
   let val = document.getElementById('val')
 
@@ -59,5 +60,21 @@ document.addEventListener('DOMContentLoaded', function () {
       button.removeAttribute("disabled")
     }, cd)
   }
+
+  function move() {
+    var elem = document.getElementById("myBar");
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width * 1 + "%";
+      }
+    }
+  }
+  move();
 
 });
