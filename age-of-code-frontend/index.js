@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, cd)
   }
 
+  //STATUS BAR
   function move() {
     var elem = document.getElementById("myBar");
     var width = 10;
