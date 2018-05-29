@@ -53,3 +53,20 @@ button{
   line-height: 30px;
   color: white;
 }
+
+#actionButton{
+  height:50px;
+  width:100px;
+  background-color:black;
+  text-align:center;
+  vertical-align: middle;
+}
+
+#actionBar{
+  width:1%;
+  height:100%;
+  background-color:red;
+  z-index:-50;
+  color:white;
+  text-align:center;
+}
