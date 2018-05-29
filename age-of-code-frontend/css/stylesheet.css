@@ -25,19 +25,23 @@ button{
 
 #comp{
   position:relative;
-  width:500px;
-  height:500px;
+  height:70vh;
   overflow: hidden;
 }
 
 #compScreen{
   position:absolute;
-  width:375px;
-  height:247px;
+  top: 30%;
+  transform: translateY(-50%) translateX(16%);
+  height: 30vw;
+  width: 40vw;
   background-color: black;
-  left:428px;
-  top:110px;
   border-radius:5%;
+  color: red;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 8px;
+  overflow-y: scroll;
 }
 
 #myProgress {

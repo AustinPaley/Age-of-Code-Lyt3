@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let skill = document.getElementById(`skill${actionObj.id}`)
     skill.addEventListener("click",() => skillLogic(val, skill, actionObj.value, actionObj.cooldown))
+    skill.addEventListener("click",() => postToScreen(actionObj.name))
   }
   //
 
@@ -39,10 +40,33 @@ document.addEventListener('DOMContentLoaded', function () {
   const userData = document.getElementById("user-data");
   const actionsContainer = document.getElementById("actions-container");
   const actionsList = document.getElementById("actions-list");
+  const compScreen = document.getElementById("compScreen")
 
-  
+
 
   let val = document.getElementById('val')
+
+  function postToScreen(buttonName){
+    if (buttonName === "Git Push"){
+      compScreen.innerHTML += "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
+    }
+
+    if (buttonName === "Add Stylesheet"){
+      compScreen.innerHTML += "> Creating stylesheet.css..." + "<br />"
+    }
+
+    if (buttonName === "Read Stack Overflow"){
+      compScreen.innerHTML += "> Navigating to stackoverflow.com..." + "<br />"
+    }
+
+    if (buttonName === "Write Code"){
+      compScreen.innerHTML += "> Writing amazing code to index.html..." + "<br />"
+    }
+
+    if (buttonName === "Build Function"){
+      compScreen.innerHTML += "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
+    }
+  }
 
 
   function skillLogic(mathTarget, button, value, cd){
@@ -61,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, cd)
   }
 
+  //STATUS BAR
   function move() {
     var elem = document.getElementById("myBar");
     var width = 10;
