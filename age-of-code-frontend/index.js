@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //ACTION OBJECT PARSER
   function createActions(actionObj){
-    console.log(actionObj)
     let button = document.createElement("BUTTON")
     button.setAttribute("class", "action")
     button.setAttribute("id", `skill${actionObj.id}`)
@@ -32,7 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
   function createUsers(userObj){
     let user = userObj.name
     let experience = userObj.experience
-    debugger
+    let userName = document.createElement("DIV")
+    userName.setAttribute("id", "username")
+    userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> ${experience}`
+    mainContainer.prepend(userName)
   }
   //
 
