@@ -31,7 +31,7 @@ button{
 
 #compScreen{
   position:absolute;
-  top: 27.5%;
+  top: 35.5%;
   height: 20.7vw;
   width: 34.8vw;
   transform: translateX(15%);
@@ -58,7 +58,10 @@ button{
   color: white;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b593fcca98f4710113a09853adc3c0cce468302c
 html {
   overflow:   scroll;
 }
@@ -86,4 +89,11 @@ html {
   color:white;
   text-align:center;
   overflow:hidden;
+}
+
+#username{
+  font-family: hacker;
+  font-style: italic;
+  text-align: right;
+  padding-right: 30px;
 }

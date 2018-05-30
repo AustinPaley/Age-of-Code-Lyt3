@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //ACTION OBJECT PARSER
   function createActions(actionObj){
-    console.log(actionObj)
-    let button = document.createElement("div")
+    let button = document.createElement("BUTTON")
+    button.setAttribute("class", "action")
     button.setAttribute("class", "action actionButton")
     button.setAttribute("id", `skill${actionObj.id}`)
     button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
   function createUsers(userObj){
     let user = userObj.name
     let experience = userObj.experience
-    debugger
+    let userName = document.createElement("DIV")
+    userName.setAttribute("id", "username")
+    userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> ${experience}`
+    mainContainer.prepend(userName)
   }
   //
 
@@ -44,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsContainer = document.getElementById("actions-container");
   const actionsList = document.getElementById("actions-list");
   const compScreen = document.getElementById("compScreen")
+  const compSection = document.getElementById("computer")
 
 
 
@@ -115,6 +119,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }, cd)
   }
 
+<<<<<<< HEAD
+=======
+  //PLAY BUTTON
+    let playButton = document.createElement("BUTTON")
+    playButton.setAttribute("class", "main nav")
+    playButton.innerHTML = "P" + "<br />" + "L" + "<br />" + "A" + "<br />" + "Y"
+    compSection.append(playButton)
+  //
+
+  //PLAY FUNCTIONALITY
+
+
+  //
+
+  //SHOP BUTTON
+  let shopButton = document.createElement("BUTTON")
+  shopButton.setAttribute("class", "main nav")
+  shopButton.innerHTML = "S" + "<br />" + "H" + "<br />" + "O" + "<br />" + "P"
+  compSection.append(shopButton)
+
+  //
+
+  //SHOP FUNCTIONALITY
+
+
+  //
+>>>>>>> b593fcca98f4710113a09853adc3c0cce468302c
 
 
   //STATUS BAR
