@@ -88,6 +88,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function doMath(target, value){
     target.innerHTML = parseInt(target.innerHTML) + value
+    var elem = document.getElementById("myBar");
+    var width = parseInt(elem.innerHTML);
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width += value;
+      elem.style.width = width + "%";
+      elem.innerHTML = width * 1 + " lines of working code";
+    }
   }
 
   function clicky(num) {
@@ -141,22 +150,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //
 
-
-  //STATUS BAR
-  function move() {
-    var elem = document.getElementById("myBar");
-    var width = 10;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        elem.innerHTML = width * 1 + "%";
-      }
-    }
-  }
-  move();
 
 });
