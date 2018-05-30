@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function createActions(actionObj){
     let button = document.createElement("BUTTON")
     button.setAttribute("class", "action")
-    
+
     button.setAttribute("class", "action actionButton")
     button.setAttribute("id", `skill${actionObj.id}`)
     button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
@@ -49,10 +49,32 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsList = document.getElementById("actions-list");
   const compScreen = document.getElementById("compScreen")
   const compSection = document.getElementById("computer")
-
-
+  const levelsofCode = {1: 100, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800, 9: 900, 10: 1000}
 
   let val = document.getElementById('val')
+
+  function postToScreen(buttonName){
+    var val = document.getElementById("val");
+    if (buttonName === "Git Push"){
+      val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
+    }
+
+    if (buttonName === "Add Stylesheet"){
+      val.innerHTML = "> Creating stylesheet.css..." + "<br />"
+    }
+
+    if (buttonName === "Read Stack Overflow"){
+      val.innerHTML = "> Navigating to stackoverflow.com..." + "<br />"
+    }
+
+    if (buttonName === "Write Code"){
+      val.innerHTML = "> Writing amazing code to index.html..." + "<br />"
+    }
+
+    if (buttonName === "Build Function"){
+      val.innerHTML = "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
+    }
+  }
 
   function skillLogic(mathTarget, button, value, cd){
     cooldown(button, cd)
@@ -81,8 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function clicky(num) {
-
-    var elem = event.target
+    var elem = event.currentTarget.querySelector(".actionBar")
     var width = 1;
     var id = setInterval(frame, (num/100));
     elem.setAttribute("style", "opacity:.7;");
@@ -105,31 +126,5 @@ document.addEventListener('DOMContentLoaded', function () {
       button.removeAttribute("disabled")
     }, cd)
   }
-
-  //PLAY BUTTON
-    let playButton = document.createElement("BUTTON")
-    playButton.setAttribute("class", "main nav")
-    playButton.innerHTML = "P" + "<br />" + "L" + "<br />" + "A" + "<br />" + "Y"
-    compSection.append(playButton)
-  //
-
-  //PLAY FUNCTIONALITY
-
-
-  //
-
-  //SHOP BUTTON
-  let shopButton = document.createElement("BUTTON")
-  shopButton.setAttribute("class", "main nav")
-  shopButton.innerHTML = "S" + "<br />" + "H" + "<br />" + "O" + "<br />" + "P"
-  compSection.append(shopButton)
-
-  //
-
-  //SHOP FUNCTIONALITY
-
-
-  //
-
 
 });

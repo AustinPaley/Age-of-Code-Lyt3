@@ -31,17 +31,16 @@ button{
 
 #compScreen{
   position:absolute;
-  top: 35.5%;
+  top: 23.5%;
   height: 20.7vw;
   width: 34.8vw;
   transform: translateX(15%);
   background-color: black;
   border-radius:3%;
-  color: red;
+  color: white;
   padding-left: 10px;
   padding-top: 10px;
-  font-size: 8px;
-  overflow-y: scroll;
+  font-size: 12px;
 }
 
 #myProgress {
@@ -56,7 +55,9 @@ button{
   text-align: center;
   line-height: 30px;
   color: white;
+  overflow: hidden;
 }
+
 
 html {
   overflow:   scroll;
@@ -79,7 +80,7 @@ html {
 
 .actionBar{
   height:100%;
-  width:100px;
+  width:100%;
   background-color:red;
   z-index:-50;
   color:white;
