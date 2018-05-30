@@ -32,13 +32,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //USER OJECT PARSER
   function createUsers(userObj){
-    let user = userObj.name
-    let experience = userObj.experience
-    let userName = document.createElement("DIV")
-    userName.setAttribute("id", "username")
-    userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> ${experience}`
-    mainContainer.prepend(userName)
+    // let user = userObj.name
+    // let experience = userObj.experience
+    // let userName = document.createElement("DIV")
+    // userName.setAttribute("id", "username")
+    // userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> ${experience}`
+    // mainContainer.prepend(userName)
   }
+  //
+
+  // ADD BUTTONS TO MIDDLE COLUMN
+    const middleButtons = document.getElementById("button-container-column")
+    let playButton = document.createElement("BUTTON")
+    playButton.setAttribute("class", "middleButton")
+    playButton.innerHTML = "P" + "<br />" + "L" + "<br />" + "A" + "<br />" + "Y"
+    let shopButton = document.createElement("BUTTON")
+    shopButton.setAttribute("class", "middleButton")
+    shopButton.innerHTML = "S" + "<br />" + "H" + "<br />" + "O" + "<br />" + "P"
+
+    middleButtons.append(playButton)
+    middleButtons.innerHTML += "<br />" + "<br />"
+    middleButtons.append(shopButton)
   //
 
   const mainContainer = document.getElementById("main-container");
@@ -98,6 +112,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       elem.style.width = `${width}%`;
       elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
+<<<<<<< HEAD
+=======
+      width = width / goalValue * 100;
+>>>>>>> 72f5489c6b8e51fd6d2c3f0e7cff7ef5fbeb3587
     }
   }
 

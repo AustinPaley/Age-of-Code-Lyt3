@@ -6,11 +6,19 @@
 h1{
   text-align: center;
   font-family: hacker;
+  font-size: 50px;
+  margin-bottom: 30px;
 }
 
 h2{
   font-family: hacker;
   padding-left: 17px;
+}
+
+h4{
+  font-family: hacker;
+  text-decoration: underline;
+  margin: 0
 }
 
 button{
@@ -20,28 +28,33 @@ button{
 }
 
 #computer{
-  margin:auto;
-  width:50%;
+  position: relative;
+  width:100%;
+  /* border: 5px solid red; */
 }
 
 #comp{
   position:relative;
-  height:70vh;
-  overflow: hidden;
+  height:64.7vh;
+  /* overflow: hidden; */
 }
 
 #compScreen{
   position:absolute;
-  top: 23.5%;
-  height: 20.7vw;
-  width: 34.8vw;
+  top: 8%;
+  height: 17.25vw;
+  width: 28.2vw;
   transform: translateX(15%);
   background-color: black;
   border-radius:3%;
   color: white;
   padding-left: 10px;
   padding-top: 10px;
-  font-size: 12px;
+  font-size: 8px;
+}
+
+#compScreen > h4{
+  font-size:14px;
 }
 
 #myProgress {
@@ -94,4 +107,19 @@ html {
   font-style: italic;
   text-align: right;
   padding-right: 30px;
+}
+
+.middleButton{
+  display: inline;
+  float: none;
+  font-size: 20px
+}
+
+.middleButton:focus{
+  background-color: grey;
+}
+
+#button-container-column{
+  transform: translateY(50%) translateX(40%);
+  margin: auto;
 }
