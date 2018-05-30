@@ -58,10 +58,14 @@ document.addEventListener('DOMContentLoaded', function () {
     cooldown(button, cd)
     doMath(mathTarget, value)
     clicky(cd)
+    statusBar(value);
   }
 
   function doMath(target, value){
     target.innerHTML = parseInt(target.innerHTML) + value
+  }
+
+  function statusBar(value) {
     var elem = document.getElementById("myBar");
     var width = parseInt(elem.innerHTML);
     if (width >= 100) {
