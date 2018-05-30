@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
   //ACTION OBJECT PARSER
   function createActions(actionObj){
     let button = document.createElement("BUTTON")
-    button.setAttribute("class", "action")
     button.setAttribute("class", "action actionButton")
     button.setAttribute("id", `skill${actionObj.id}`)
     button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
@@ -50,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const compSection = document.getElementById("computer")
 
 
-
   let val = document.getElementById('val')
 
   function postToScreen(buttonName){
@@ -81,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
       objDiv.scrollTop = objDiv.scrollHeight;
     }
   }
-
 
   function skillLogic(mathTarget, button, value, cd){
     cooldown(button, cd)
