@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsContainer = document.getElementById("actions-container");
   const actionsList = document.getElementById("actions-list");
   const compScreen = document.getElementById("compScreen")
+  const compSection = document.getElementById("computer")
 
 
 
@@ -98,22 +99,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }, cd)
   }
 
-  function clicky(num) {
-    var elem = document.getElementById("bar");
-    var width = 1;
-    var id = setInterval(frame, (num/100));
-    elem.setAttribute("style", "opacity:.7;");
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        elem.setAttribute("style", "opacity:1;");
-        elem.style.width = '100%';
-      } else {
-        width++;
-        elem.style.width = width + '%';
-      }
-    }
-  }
+  //PLAY BUTTON
+    let playButton = document.createElement("BUTTON")
+    playButton.setAttribute("class", "main nav")
+    playButton.innerHTML = "P" + "<br />" + "L" + "<br />" + "A" + "<br />" + "Y"
+    compSection.append(playButton)
+  //
+
+  //PLAY FUNCTIONALITY
+
+
+  //
+
+  //SHOP BUTTON
+  let shopButton = document.createElement("BUTTON")
+  shopButton.setAttribute("class", "main nav")
+  shopButton.innerHTML = "S" + "<br />" + "H" + "<br />" + "O" + "<br />" + "P"
+  compSection.append(shopButton)
+
+  //
+
+  //SHOP FUNCTIONALITY
+
+
+  //
 
 
 });
