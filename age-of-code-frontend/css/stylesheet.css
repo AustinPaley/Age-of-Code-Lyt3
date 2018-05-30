@@ -58,10 +58,7 @@ button{
   color: white;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b593fcca98f4710113a09853adc3c0cce468302c
 html {
   overflow:   scroll;
 }
@@ -83,7 +80,7 @@ html {
 
 .actionBar{
   height:100%;
-  width:100px;
+  width:100%;
   background-color:red;
   z-index:-50;
   color:white;

@@ -94,8 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function clicky(num) {
-    debugger
-    var elem = event.target
+    var elem = event.currentTarget.querySelector(".actionBar")
     var width = 1;
     var id = setInterval(frame, (num/100));
     elem.setAttribute("style", "opacity:.7;");
@@ -119,39 +118,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }, cd)
   }
 
-<<<<<<< HEAD
-=======
-  //PLAY BUTTON
-    let playButton = document.createElement("BUTTON")
-    playButton.setAttribute("class", "main nav")
-    playButton.innerHTML = "P" + "<br />" + "L" + "<br />" + "A" + "<br />" + "Y"
-    compSection.append(playButton)
-  //
-
-  //PLAY FUNCTIONALITY
-
-
-  //
-
-  //SHOP BUTTON
-  let shopButton = document.createElement("BUTTON")
-  shopButton.setAttribute("class", "main nav")
-  shopButton.innerHTML = "S" + "<br />" + "H" + "<br />" + "O" + "<br />" + "P"
-  compSection.append(shopButton)
-
-  //
-
-  //SHOP FUNCTIONALITY
-
-
-  //
->>>>>>> b593fcca98f4710113a09853adc3c0cce468302c
 
 
   //STATUS BAR
   function move() {
     var elem = document.getElementById("myBar");
-    var width = 10;
+    var width = 1;
     var id = setInterval(frame, 10);
     function frame() {
       if (width >= 100) {
