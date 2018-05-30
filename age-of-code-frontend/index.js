@@ -119,23 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, cd)
   }
 
-  function clicky(num) {
-    var elem = document.getElementById("bar");
-    var width = 1;
-    var id = setInterval(frame, (num/100));
-    elem.setAttribute("style", "opacity:.7;");
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        elem.setAttribute("style", "opacity:1;");
-        elem.style.width = '100%';
-      } else {
-        width++;
-        elem.style.width = width + '%';
-      }
-    }
-  }
-
   //PLAY BUTTON
     let playButton = document.createElement("BUTTON")
     playButton.setAttribute("class", "main nav")
