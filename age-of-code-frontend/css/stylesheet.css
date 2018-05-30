@@ -37,10 +37,10 @@ button{
   transform: translateX(15%);
   background-color: black;
   border-radius:3%;
-  color: red;
+  color: white;
   padding-left: 10px;
   padding-top: 10px;
-  font-size: 8px;
+  font-size: 12px;
   overflow-y: scroll;
 }
 
