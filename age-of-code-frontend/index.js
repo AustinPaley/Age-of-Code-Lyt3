@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //
 
   //SHOP FUNCTIONALITY
-  
+
 
   //
 
