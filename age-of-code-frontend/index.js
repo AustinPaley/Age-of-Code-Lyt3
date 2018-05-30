@@ -9,14 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //ACTION OBJECT PARSER
   function createActions(actionObj){
-<<<<<<< HEAD
     let button = document.createElement("BUTTON")
     button.setAttribute("class", "action")
-=======
-    console.log(actionObj)
-    let button = document.createElement("div")
     button.setAttribute("class", "action actionButton")
->>>>>>> 579f6c75808bbba0d8e9d085935364a03337c9a4
     button.setAttribute("id", `skill${actionObj.id}`)
     button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
 
@@ -52,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsContainer = document.getElementById("actions-container");
   const actionsList = document.getElementById("actions-list");
   const compScreen = document.getElementById("compScreen")
+  const compSection = document.getElementById("computer")
 
 
 
@@ -139,6 +135,31 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }
+
+  //PLAY BUTTON
+    let playButton = document.createElement("BUTTON")
+    playButton.setAttribute("class", "main nav")
+    playButton.innerHTML = "P" + "<br />" + "L" + "<br />" + "A" + "<br />" + "Y"
+    compSection.append(playButton)
+  //
+
+  //PLAY FUNCTIONALITY
+
+
+  //
+
+  //SHOP BUTTON
+  let shopButton = document.createElement("BUTTON")
+  shopButton.setAttribute("class", "main nav")
+  shopButton.innerHTML = "S" + "<br />" + "H" + "<br />" + "O" + "<br />" + "P"
+  compSection.append(shopButton)
+
+  //
+
+  //SHOP FUNCTIONALITY
+
+
+  //
 
 
   //STATUS BAR
