@@ -40,10 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsContainer = document.getElementById("actions-container");
   const actionsList = document.getElementById("actions-list");
 
-  
 
   let val = document.getElementById('val')
-
 
   function skillLogic(mathTarget, button, value, cd){
     cooldown(button, cd)
@@ -52,6 +50,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function doMath(target, value){
     target.innerHTML = parseInt(target.innerHTML) + value
+    var elem = document.getElementById("myBar");
+    var width = parseInt(elem.innerHTML);
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width += value;
+      elem.style.width = width + "%";
+      elem.innerHTML = width * 1 + " lines of working code";
+    }
   }
 
   function cooldown(button, cd){
@@ -60,22 +67,5 @@ document.addEventListener('DOMContentLoaded', function () {
       button.removeAttribute("disabled")
     }, cd)
   }
-
-  //STATUS BAR
-  function move() {
-    var elem = document.getElementById("myBar");
-    var width = 10;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        elem.innerHTML = width * 1 + "%";
-      }
-    }
-  }
-  move();
 
 });
