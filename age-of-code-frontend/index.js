@@ -65,7 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
     target.innerHTML = parseInt(target.innerHTML) + value
   }
 
-  function statusBar(value) {
+  function statusBar(value, goalValue) {
+    goalValue = 100 || goalValue;
     var elem = document.getElementById("myBar");
     var width = parseInt(elem.innerHTML);
     if (width < 100) {
@@ -73,8 +74,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (width >= 100) {
         width = 100
       }
-      elem.style.width = width + "%";
-      elem.innerHTML = width + " lines of working code!";
+      elem.style.width = `${width / goalValue * 100}%`;
+      elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
+      width = width / goalValue * 100; 
     }
   }
 
