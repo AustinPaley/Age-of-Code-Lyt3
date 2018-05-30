@@ -41,7 +41,6 @@ button{
   padding-left: 10px;
   padding-top: 10px;
   font-size: 12px;
-  overflow-y: scroll;
 }
 
 #myProgress {
@@ -56,6 +55,7 @@ button{
   text-align: center;
   line-height: 30px;
   color: white;
+  overflow: hidden;
 }
 
 

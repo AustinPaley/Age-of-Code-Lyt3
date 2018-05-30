@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
   //ACTION OBJECT PARSER
   function createActions(actionObj){
     let button = document.createElement("BUTTON")
+    button.setAttribute("class", "action")
+
     button.setAttribute("class", "action actionButton")
     button.setAttribute("id", `skill${actionObj.id}`)
     button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
@@ -47,36 +49,30 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsList = document.getElementById("actions-list");
   const compScreen = document.getElementById("compScreen")
   const compSection = document.getElementById("computer")
-
+  const levelsofCode = {1: 100, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800, 9: 900, 10: 1000}
 
   let val = document.getElementById('val')
 
   function postToScreen(buttonName){
-    var objDiv = document.getElementById("compScreen");
-    objDiv.scrollTop = objDiv.scrollHeight;
+    var val = document.getElementById("val");
     if (buttonName === "Git Push"){
-      compScreen.innerHTML += "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
     }
 
     if (buttonName === "Add Stylesheet"){
-      compScreen.innerHTML += "> Creating stylesheet.css..." + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> Creating stylesheet.css..." + "<br />"
     }
 
     if (buttonName === "Read Stack Overflow"){
-      compScreen.innerHTML += "> Navigating to stackoverflow.com..." + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> Navigating to stackoverflow.com..." + "<br />"
     }
 
     if (buttonName === "Write Code"){
-      compScreen.innerHTML += "> Writing amazing code to index.html..." + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> Writing amazing code to index.html..." + "<br />"
     }
 
     if (buttonName === "Build Function"){
-      compScreen.innerHTML += "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
     }
   }
 
@@ -84,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cooldown(button, cd)
     doMath(mathTarget, value)
     clicky(cd)
-    //statusBar(value);
+    statusBar(value);
   }
 
   function doMath(target, value){
@@ -94,12 +90,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function statusBar(value) {
     var elem = document.getElementById("myBar");
     var width = parseInt(elem.innerHTML);
-    if (width >= 100) {
-      //clearInterval(id);
-    } else {
+    if (width < 100) {
       width += value;
+      if (width >= 100) {
+        width = 100
+      }
       elem.style.width = width + "%";
-      elem.innerHTML = width * 1 + " lines of working code";
+      elem.innerHTML = width + " lines of working code!";
     }
   }
 
@@ -127,23 +124,5 @@ document.addEventListener('DOMContentLoaded', function () {
       button.removeAttribute("disabled")
     }, cd)
   }
-
-
-  //STATUS BAR
-  function move() {
-    var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        elem.innerHTML = width * 1 + "%";
-      }
-    }
-  }
-  move();
 
 });
