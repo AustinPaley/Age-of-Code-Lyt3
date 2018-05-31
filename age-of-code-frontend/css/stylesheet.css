@@ -155,3 +155,17 @@ div.buttcontainer > p{
 .price{
   padding-left:40px;
 }
+
+.difficultyh2{
+  text-align: center;
+}
+
+.difficultydiv{
+  background-color:gray;
+  border-style:solid;
+  margin-top:5px;
+  margin-bottom:5px;
+  border-radius:15px 50px;
+  font-weight: bold;
+  font-size:20px;
+}

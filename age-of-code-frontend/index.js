@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
   shop.setAttribute("class", "shop")
   shop.innerHTML = "<h2 class='shop'>Buy New Hacks</h2><br>"
 
+  const difficultyContainer = document.createElement("DIV")
+  difficultyContainer.setAttribute("class", "difficulty_selector")
+  difficultyContainer.innerHTML = "<h2 class='difficultyh2'>Select Your Difficulty</h2><br><div class='difficultydiv'>Easy</div><div class='difficultydiv'>Medium</div><div class='difficultydiv'>Hard</div>"
+
+
+
   const difficulty = document.createElement('DIV')
   difficulty.setAttribute("class", "difficulty")
   difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
@@ -23,17 +29,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const difficulty_easy = document.createElement('DIV')
   difficulty_easy.setAttribute("class", "difficulty")
   difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
-  // rightContainer.appendChild(difficulty_easy)
 
   const difficulty_medium = document.createElement('DIV')
   difficulty_medium.setAttribute("class", "difficulty")
   difficulty_medium.innerHTML = "<h2>Difficulty: Medium</h2>"
-  // rightContainer.appendChild(difficulty_medium)
 
   const difficulty_Hard = document.createElement('DIV')
   difficulty_Hard.setAttribute("class", "difficulty")
   difficulty_Hard.innerHTML = "<h2>Difficulty: Hard</h2>"
-  // rightContainer.appendChild(difficulty_Hard)
 
   const difficulty_level = document.getElementsByClassName('difficulty')
   //
@@ -117,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.target.id === "shopButton"){
       rightContainer.style.display = "none";
       shop.style.display = "block";
+      difficultyContainer.style.display = "none";
       rightSection.appendChild(shop)
 
     }
@@ -126,10 +130,45 @@ document.addEventListener('DOMContentLoaded', function () {
   //PLAY BUTTON FUNCTIONALITY
   document.addEventListener("click", e =>{
     if (e.target.id === "playButton"){
-      rightContainer.style.display = "block";
+      difficultyContainer.style.display = "block";
       shop.style.display="none";
+      rightContainer.style.display="none";
+      rightSection.appendChild(difficultyContainer)
     }
   })
+  //
+  //START CODING FUNCTIONALITY
+  difficultyContainer.addEventListener("click", e =>{
+    if (e.target.innerText === "Easy"){
+      displayplay()
+      // rightContainer.removeChild(difficulty_medium)
+      // rightContainer.removeChild(difficulty_Hard)
+      rightContainer.appendChild(difficulty_easy)
+    }
+    if (e.target.innerText === "Medium"){
+displayplay()
+      // rightContainer.removeChild(difficulty_easy)
+      // rightContainer.removeChild(difficulty_Hard)
+      rightContainer.appendChild(difficulty_medium)
+    }
+    if (e.target.innerText === "Hard"){
+displayplay()
+      // rightContainer.children.remove()
+      // rightContainer.removeChild(difficulty_medium)
+      rightContainer.appendChild(difficulty_Hard)
+    }
+  })
+
+  function displayplay(){
+    difficultyContainer.style.display = "none";
+    shop.style.display="none";
+    rightContainer.style.display="block";
+    if (rightContainer.querySelector(".difficulty")){
+      rightContainer.querySelector(".difficulty").remove()
+    }
+  }
+  //
+
 
   //PATCH BUTTON FUNCTIONALITY HOLDER
   // document.addEventListener('click', e => {
@@ -158,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     return experience_value
   }
-
 });
 
 function createButton(name, id, value, cd){
