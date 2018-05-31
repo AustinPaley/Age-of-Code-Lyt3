@@ -66,7 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  //ACTION OBJECT PARSER
+  //action or shop button maker
+  //makes either action buttons on the user screen or makes buttons
+  // on the shop screen
   function createActions(actionObj){
     //buttons are being added to the user
     let userPermissions = permissions[0]
@@ -77,12 +79,13 @@ document.addEventListener('DOMContentLoaded', function () {
       // adds the button to a "button div" to make it prettier
       let shopButton = document.createElement("div")
       shopButton.setAttribute("class", "buttcontainer")
-      shopButton.innerHTML = `<p>${actionObj.name}</p>`
+      shopButton.innerHTML = `<p>${actionObj.name}</p>
+                              <p class="price">${actionObj.price}</p>`
+      shopButton.setAttribute("data-price", actionObj.price)
       shopButton.addEventListener("click", () => {shopHandler(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)} )
       // add in
       //<p class="flavor">${actionObj.flavor}</p>
       //<p class="price">${actionObj.price}</p>
-
 
       shop.appendChild(shopButton)
     }
@@ -240,8 +243,13 @@ function cooldown(button, cd){
 
 
   function shopHandler(name, id, value, cd){
-    event.target.parentNode.parentNode.removeChild(event.target.parentNode)
-    createButton(name, id, value, cd)
+    let money = parseInt(experience.innerHTML)
+    let price = event.currentTarget.dataset.price
+    if (money >= price){
+      experience.innerHTML = money - price
+      event.currentTarget.parentNode.removeChild(event.currentTarget)
+      createButton(name, id, value, cd)
+    }
   }
 
 
