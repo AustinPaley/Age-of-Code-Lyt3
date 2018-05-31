@@ -287,8 +287,24 @@ function cooldown(button, cd){
       experience.innerHTML = money - price
       event.currentTarget.parentNode.removeChild(event.currentTarget)
       createButton(name, id, value, cd)
+        let allPermissions = document.getElementsByClassName('action actionButton')
+        let permittedActions = ""
+        for (i=0; i<11; i++){
+          if (allPermissions[i] && parseInt(allPermissions[i].id.slice(5)) > 0){
+            permittedActions += 1
+          }
+          else if (i){
+            permittedActions += 0
+          }
+        }
+        debugger
+        fetch('http://localhost:3000/api/v1/users/1', {
+          method: 'PATCH',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({name: "Default", permissions: `${permittedActions}`, experience: `${money - price}`})
+        })
+      }
     }
-  }
 
 
 function postToScreen(buttonName){
