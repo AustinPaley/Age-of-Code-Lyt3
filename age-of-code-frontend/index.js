@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function createActions(actionObj){
     let button = document.createElement("BUTTON")
     button.setAttribute("class", "action")
+
     button.setAttribute("class", "action actionButton")
     button.setAttribute("id", `skill${actionObj.id}`)
     button.innerHTML = `<div class="actionBar">${actionObj.name}<img class="lock" src="lock-icon.png"></div>`
@@ -34,13 +35,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //USER OJECT PARSER
   function createUsers(userObj){
-    let user = userObj.name
-    let experience = userObj.experience
-    let userName = document.createElement("DIV")
-    userName.setAttribute("id", "username")
-    userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> ${experience}`
-    mainContainer.prepend(userName)
+    // let user = userObj.name
+    // let experience = userObj.experience
+    // let userName = document.createElement("DIV")
+    // userName.setAttribute("id", "username")
+    // userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> ${experience}`
+    // mainContainer.prepend(userName)
   }
+  //
+
+  // ADD BUTTONS TO MIDDLE COLUMN
+    const middleButtons = document.getElementById("button-container-column")
+    let playButton = document.createElement("BUTTON")
+    playButton.setAttribute("class", "middleButton")
+    playButton.innerHTML = "P" + "<br />" + "L" + "<br />" + "A" + "<br />" + "Y"
+    let shopButton = document.createElement("BUTTON")
+    shopButton.setAttribute("class", "middleButton")
+    shopButton.innerHTML = "S" + "<br />" + "H" + "<br />" + "O" + "<br />" + "P"
+
+    middleButtons.append(playButton)
+    middleButtons.innerHTML += "<br />" + "<br />"
+    middleButtons.append(shopButton)
   //
 
   const mainContainer = document.getElementById("main-container");
@@ -51,49 +66,57 @@ document.addEventListener('DOMContentLoaded', function () {
   const actionsList = document.getElementById("actions-list");
   const compScreen = document.getElementById("compScreen")
   const compSection = document.getElementById("computer")
-
-
+  const levelsofCode = {1: 100, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800, 9: 900, 10: 1000}
 
   let val = document.getElementById('val')
 
   function postToScreen(buttonName){
-    var objDiv = document.getElementById("compScreen");
-    objDiv.scrollTop = objDiv.scrollHeight;
+    var val = document.getElementById("val");
     if (buttonName === "Git Push"){
-      compScreen.innerHTML += "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
     }
 
     if (buttonName === "Add Stylesheet"){
-      compScreen.innerHTML += "> Creating stylesheet.css..." + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> Creating stylesheet.css..." + "<br />"
     }
 
     if (buttonName === "Read Stack Overflow"){
-      compScreen.innerHTML += "> Navigating to stackoverflow.com..." + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> Navigating to stackoverflow.com..." + "<br />"
     }
 
     if (buttonName === "Write Code"){
-      compScreen.innerHTML += "> Writing amazing code to index.html..." + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> Writing amazing code to index.html..." + "<br />"
     }
 
     if (buttonName === "Build Function"){
-      compScreen.innerHTML += "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
-      objDiv.scrollTop = objDiv.scrollHeight;
+      val.innerHTML = "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
     }
   }
-
 
   function skillLogic(mathTarget, button, value, cd){
     cooldown(button, cd)
     doMath(mathTarget, value)
     clicky(cd)
+    statusBar(value);
   }
 
   function doMath(target, value){
     target.innerHTML = parseInt(target.innerHTML) + value
+  }
+
+  function statusBar(value, goalValue) {
+    goalValue = 100 || goalValue;
+    var elem = document.getElementById("myBar");
+    var width = parseInt(elem.innerHTML);
+    if (width < 100) {
+      width += value;
+      if (width >= 100) {
+        width = 100
+      }
+      elem.style.width = `${width / goalValue * 100}%`;
+      elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
+      width = width / goalValue * 100;
+    }
   }
 
   function clicky(num) {
@@ -121,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, cd)
   }
 
+<<<<<<< HEAD
 
 
   let ai = {interval:null}
@@ -167,4 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   move();
 
+=======
+>>>>>>> d07bc73b729b272239c56212dad03ce475da8b19
 });
