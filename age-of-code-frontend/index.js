@@ -204,12 +204,12 @@ function statusBar(value, goalValue) {
 }
 function winOrLose(myEndingScore, opponentScore=1) {
   if (myEndingScore > opponentScore) {
-    experience = parseInt(experience.innerText) + 100
-    document.getElementById('experience').innerHTML = `${experience}`
+    Newexperience = parseInt(experience.innerText) + 100
+    document.getElementById('experience').innerHTML = `${Newexperience}`
     fetch('http://localhost:3000/api/v1/users/1', {
       method: 'PATCH',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name: "Default", permissions: "11110000000", experience: `${experience}`})
+      body:JSON.stringify({name: "Default", permissions: "11110000000", experience: `${Newexperience}`})
     })
     alert("You win!");
   } else {
