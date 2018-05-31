@@ -18,6 +18,10 @@ button{
   border-radius: 10px;
 }
 
+#buttons{
+  pointer-events: none;
+}
+
 #computer{
   margin:auto;
   width:50%;
@@ -76,16 +80,30 @@ html {
   display:inline-block;
   margin-left:10px;
   white-space: nowrap;
+  z-index:0;
+  position:relative;
 }
 
 .actionBar{
   height:100%;
   width:100%;
   background-color:red;
-  z-index:-50;
+  z-index:1;
   color:white;
   text-align:center;
   overflow:hidden;
+  position:relative;
+}
+
+.lock{
+  width:100%;
+  height:200%;
+  top:-20px;
+  z-index:2;
+  display:block;
+  position:absolute;
+  background-color:gray;
+  opacity:.7;
 }
 
 #username{

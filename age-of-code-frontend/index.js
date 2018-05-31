@@ -6,20 +6,23 @@ document.addEventListener('DOMContentLoaded', function () {
   .then(jsondata => jsondata.forEach( actionObj => {createActions(actionObj)} ))
   //
 
-
+  var buttonsForAi = [];
+  var difficultyForAi = [0,1500,1100,1000,900,700,500,400,300,250,200];
   //ACTION OBJECT PARSER
   function createActions(actionObj){
     let button = document.createElement("BUTTON")
     button.setAttribute("class", "action")
     button.setAttribute("class", "action actionButton")
     button.setAttribute("id", `skill${actionObj.id}`)
-    button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
+    button.innerHTML = `<div class="actionBar">${actionObj.name}<img class="lock" src="lock-icon.png"></div>`
+
 
     buttons.appendChild(button)
 
     let skill = document.getElementById(`skill${actionObj.id}`)
     skill.addEventListener("click",() => skillLogic(val, skill, actionObj.value, actionObj.cooldown))
     skill.addEventListener("click",() => postToScreen(actionObj.name))
+    buttonsForAi.push(skill);
   }
   //
 
@@ -119,6 +122,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
+
+  let ai = {interval:null}
+
+  ai['begin'] = () => {
+    interval = setInterval(function(){
+      rand = buttonsForAi[Math.floor(Math.random() * buttonsForAi.length)]
+      rand.click()
+    }, difficultyForAi[buttonsForAi.length])
+  }
+  ai['stop'] = () => {
+    clearInterval(interval)
+  }
+
+
+  document.getElementById('ai-test').addEventListener('click', function(){
+    ai.begin()
+  })
+
+  document.getElementById('ai-stop').addEventListener('click', function(){
+    ai.stop()
+  })
+
+
+  //ai Code
+  //ai code will take in:
+  //array of buttons
+  //this will determine difficulty, buttons.length == difficulty
 
   //STATUS BAR
   function move() {
