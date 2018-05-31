@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
         width = 100
         elem.style.width = `${width}%`;
         elem.innerHTML = `${width * goalValue / 100} lines of working code!`;
-        let myEndingScore = 100;
+        let myEndingScore = goalValue;
         setTimeout(() => {
           winOrLose(myEndingScore);
         }, 100);
