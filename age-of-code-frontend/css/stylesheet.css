@@ -124,6 +124,10 @@ html {
   margin: auto;
 }
 
+.shop{
+  background-color:blue;
+}
+
 div.shop > h2{
   text-align: center;
 }

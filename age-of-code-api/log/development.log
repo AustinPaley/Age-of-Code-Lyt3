@@ -6881,3 +6881,331 @@ Migrating to CreateUserActions (20180529160541)
   ↳ db/seeds.rb:24
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:24
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 10:11:43 -0400
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 10:11:43 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  [1m[36mAction Load (1.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 39ms (Views: 13.3ms | ActiveRecord: 16.5ms)
+
+
+Completed 200 OK in 77ms (Views: 22.7ms | ActiveRecord: 45.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 10:16:01 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 10:16:01 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  [1m[36mAction Load (1.0ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.9ms)
+
+
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 10:17:00 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 10:17:00 -0400
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (1.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 45ms (Views: 7.3ms | ActiveRecord: 8.7ms)
+
+
+Completed 200 OK in 54ms (Views: 9.1ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 10:17:05 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 10:17:05 -0400
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (1.3ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 5.2ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (242.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "age-of-code-2_development"[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (200.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "age-of-code-2_test"[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (440.7ms)[0m  [1m[35mCREATE DATABASE "age-of-code-2_development" ENCODING = 'unicode'[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (390.4ms)[0m  [1m[35mCREATE DATABASE "age-of-code-2_test" ENCODING = 'unicode'[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35mSQL (13.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (11.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "actions" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (52.9ms)[0m  [1m[35mCREATE TABLE "actions" ("id" bigserial primary key, "name" character varying, "value" integer, "cooldown" integer, "target" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_actions" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "user_actions" ("id" bigserial primary key, "user_id" integer, "action_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "experience" integer, "permissions" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529160541)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529160531),
+(20180529160507);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (6.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (4.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-31 14:17:08.819968"], ["updated_at", "2018-05-31 14:17:08.819968"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "actions" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE TABLE "actions" ("id" bigserial primary key, "name" character varying, "value" integer, "cooldown" integer, "target" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_actions" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "user_actions" ("id" bigserial primary key, "user_id" integer, "action_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "experience" integer, "permissions" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529160541)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529160531),
+(20180529160507);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-31 14:17:08.969648"], ["updated_at", "2018-05-31 14:17:08.969648"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (1.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-05-31 14:17:08.979932"], ["key", "environment"]]
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (4.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "experience", "permissions", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Default"], ["experience", 0], ["permissions", "11110000000"], ["created_at", "2018-05-31 14:17:09.047442"], ["updated_at", "2018-05-31 14:17:09.047442"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAction Create (1.0ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Git Push"], ["value", 15], ["cooldown", 5000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.135980"], ["updated_at", "2018-05-31 14:17:09.135980"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Add Stylesheet"], ["value", 20], ["cooldown", 30000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.143173"], ["updated_at", "2018-05-31 14:17:09.143173"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Read Stack Overflow"], ["value", 10], ["cooldown", 10000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.148567"], ["updated_at", "2018-05-31 14:17:09.148567"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAction Create (0.7ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Write Code"], ["value", 1], ["cooldown", 1000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.151960"], ["updated_at", "2018-05-31 14:17:09.151960"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mAction Create (0.6ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Build Function"], ["value", 5], ["cooldown", 3000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.157901"], ["updated_at", "2018-05-31 14:17:09.157901"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mAction Create (0.6ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Build API"], ["value", 60], ["cooldown", 50000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.163890"], ["updated_at", "2018-05-31 14:17:09.163890"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAction Create (0.8ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Build Recursion"], ["value", 20], ["cooldown", 15000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.169855"], ["updated_at", "2018-05-31 14:17:09.169855"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mAction Create (0.7ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Build For Loop"], ["value", 10], ["cooldown", 7000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.176771"], ["updated_at", "2018-05-31 14:17:09.176771"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAction Create (0.6ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hire Intern"], ["value", 15], ["cooldown", 7000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.183206"], ["updated_at", "2018-05-31 14:17:09.183206"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Refactor Code"], ["value", 5], ["cooldown", 2000], ["target", "You"], ["created_at", "2018-05-31 14:17:09.189140"], ["updated_at", "2018-05-31 14:17:09.189140"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mAction Create (0.9ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Touch Typing"], ["value", 2], ["cooldown", 1500], ["target", "You"], ["created_at", "2018-05-31 14:17:09.193540"], ["updated_at", "2018-05-31 14:17:09.193540"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT  "actions".* FROM "actions" WHERE "actions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mUserAction Create (1.3ms)[0m  [1m[32mINSERT INTO "user_actions" ("user_id", "action_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["action_id", 1], ["created_at", "2018-05-31 14:17:09.256244"], ["updated_at", "2018-05-31 14:17:09.256244"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mAction Load (1.1ms)[0m  [1m[34mSELECT  "actions".* FROM "actions" WHERE "actions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mUserAction Create (0.5ms)[0m  [1m[32mINSERT INTO "user_actions" ("user_id", "action_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["action_id", 4], ["created_at", "2018-05-31 14:17:09.329841"], ["updated_at", "2018-05-31 14:17:09.329841"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 10:17:44 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 10:17:44 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (0.8ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 27ms (Views: 7.4ms | ActiveRecord: 6.9ms)
+
+
+Completed 200 OK in 36ms (Views: 9.7ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 10:22:34 -0400
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 10:22:34 -0400
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (3.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 3.2ms)
+
+
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 10:22:39 -0400
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 10:22:39 -0400
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (2.3ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 2.3ms)
+
+
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 13ms (Views: 4.2ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 10:23:15 -0400
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 10:23:15 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  [1m[36mAction Load (1.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 49ms (Views: 12.9ms | ActiveRecord: 9.6ms)
+
+
+Completed 200 OK in 62ms (Views: 16.2ms | ActiveRecord: 19.8ms)
+
+

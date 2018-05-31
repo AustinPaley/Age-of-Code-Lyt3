@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //ACTION OBJECT PARSER
   function createActions(actionObj){
+    //buttons are being added to the user
     let userPermissions = permissions[0]
     let button = document.createElement("BUTTON")
     button.setAttribute("class", "action")
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       skill.addEventListener("click",() => skillLogic(val, skill, actionObj.value, actionObj.cooldown))
       skill.addEventListener("click",() => postToScreen(actionObj.name))
     }
+    //buttons are being added to the shop
     let button2 = document.createElement("BUTTON")
     button2.setAttribute("class", "action")
 
@@ -114,6 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+
+  // what happens when a skill button is pressed
   function skillLogic(mathTarget, button, value, cd){
     cooldown(button, cd)
     doMath(mathTarget, value)
