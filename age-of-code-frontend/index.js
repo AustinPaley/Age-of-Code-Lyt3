@@ -16,10 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
   shop.setAttribute("class", "shop")
   shop.innerHTML = "<h2 class='shop'>Buy New Hacks</h2><br>"
 
+  const difficultyContainer = document.createElement("DIV")
+  difficultyContainer.setAttribute("class", "difficulty_selector")
+  difficultyContainer.innerHTML = "<h2 class='difficultyh2'>Select Your Difficulty</h2><br><div class='difficultydiv'>Easy</div><div class='difficultydiv'>Medium</div><div class='difficultydiv'>Hard</div>"
+
+
+
   const difficulty = document.createElement('DIV')
   difficulty.setAttribute("class", "difficulty")
   difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
   let experience = 0
+
   const difficulty_easy = document.createElement('DIV')
   difficulty_easy.setAttribute("class", "difficulty")
   difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
@@ -33,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const difficulty_Hard = document.createElement('DIV')
   difficulty_Hard.setAttribute("class", "difficulty")
   difficulty_Hard.innerHTML = "<h2>Difficulty: Hard</h2>"
-  // rightContainer.appendChild(difficulty_Hard)
+  // rightContainer.appendChild(difficulty_hard)
 
   const difficulty_level = document.getElementsByClassName('difficulty')
   //
@@ -66,7 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  //ACTION OBJECT PARSER
+  //action or shop button maker
+  //makes either action buttons on the user screen or makes buttons
+  // on the shop screen
   function createActions(actionObj){
     //buttons are being added to the user
     let userPermissions = permissions[0]
@@ -77,12 +86,13 @@ document.addEventListener('DOMContentLoaded', function () {
       // adds the button to a "button div" to make it prettier
       let shopButton = document.createElement("div")
       shopButton.setAttribute("class", "buttcontainer")
-      shopButton.innerHTML = `<p>${actionObj.name}</p>`
+      shopButton.innerHTML = `<p>${actionObj.name}</p>
+                              <p class="price">${actionObj.price}</p>`
+      shopButton.setAttribute("data-price", actionObj.price)
       shopButton.addEventListener("click", () => {shopHandler(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)} )
       // add in
       //<p class="flavor">${actionObj.flavor}</p>
       //<p class="price">${actionObj.price}</p>
-
 
       shop.appendChild(shopButton)
     }
@@ -114,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.target.id === "shopButton"){
       rightContainer.style.display = "none";
       shop.style.display = "block";
+      difficultyContainer.style.display = "none";
       rightSection.appendChild(shop)
 
     }
@@ -123,10 +134,45 @@ document.addEventListener('DOMContentLoaded', function () {
   //PLAY BUTTON FUNCTIONALITY
   document.addEventListener("click", e =>{
     if (e.target.id === "playButton"){
-      rightContainer.style.display = "block";
+      difficultyContainer.style.display = "block";
       shop.style.display="none";
+      rightContainer.style.display="none";
+      rightSection.appendChild(difficultyContainer)
     }
   })
+  //
+  //START CODING FUNCTIONALITY
+  difficultyContainer.addEventListener("click", e =>{
+    if (e.target.innerText === "Easy"){
+      displayplay()
+      // rightContainer.removeChild(difficulty_medium)
+      // rightContainer.removeChild(difficulty_Hard)
+      rightContainer.appendChild(difficulty_easy)
+    }
+    if (e.target.innerText === "Medium"){
+displayplay()
+      // rightContainer.removeChild(difficulty_easy)
+      // rightContainer.removeChild(difficulty_Hard)
+      rightContainer.appendChild(difficulty_medium)
+    }
+    if (e.target.innerText === "Hard"){
+displayplay()
+      // rightContainer.children.remove()
+      // rightContainer.removeChild(difficulty_medium)
+      rightContainer.appendChild(difficulty_Hard)
+    }
+  })
+
+  function displayplay(){
+    difficultyContainer.style.display = "none";
+    shop.style.display="none";
+    rightContainer.style.display="block";
+    if (rightContainer.querySelector(".difficulty")){
+      rightContainer.querySelector(".difficulty").remove()
+    }
+  }
+  //
+
 
   //PATCH BUTTON FUNCTIONALITY HOLDER
   // document.addEventListener('click', e => {
@@ -214,7 +260,7 @@ function winOrLose(myEndingScore, opponentScore=1) {
     fetch('http://localhost:3000/api/v1/users/1', {
       method: 'PATCH',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name: "Default", permissions: "11110000000", experience: `${experience}`})
+      body:JSON.stringify({name: "Default", permissions: "11110000000", experience: `${Newexperience}`})
     })
     alert("You win!");
   } else {
@@ -248,8 +294,13 @@ function cooldown(button, cd){
 
 
   function shopHandler(name, id, value, cd){
-    event.target.parentNode.parentNode.removeChild(event.target.parentNode)
-    createButton(name, id, value, cd)
+    let money = parseInt(experience.innerHTML)
+    let price = event.currentTarget.dataset.price
+    if (money >= price){
+      experience.innerHTML = money - price
+      event.currentTarget.parentNode.removeChild(event.currentTarget)
+      createButton(name, id, value, cd)
+    }
   }
 
 
