@@ -20,6 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
   difficulty.setAttribute("class", "difficulty")
   difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
   let experience = 0
+  const difficulty_easy = document.createElement('DIV')
+  difficulty_easy.setAttribute("class", "difficulty")
+  difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
+  rightContainer.appendChild(difficulty_easy)
+
+  const difficulty_medium = document.createElement('DIV')
+  difficulty_medium.setAttribute("class", "difficulty")
+  difficulty_medium.innerHTML = "<h2>Difficulty: Medium</h2>"
+  // rightContainer.appendChild(difficulty_medium)
+
+  const difficulty_Hard = document.createElement('DIV')
+  difficulty_Hard.setAttribute("class", "difficulty")
+  difficulty_Hard.innerHTML = "<h2>Difficulty: Hard</h2>"
+  // rightContainer.appendChild(difficulty_Hard)
+
+  const difficulty_level = document.getElementsByClassName('difficulty')
   //
 
   //USER GET
@@ -235,11 +251,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  // EXPERIENCE UPDATE FUNCTIONALITY
-  // document.addEventListener('click', e => {
-  // })
-  //
-
   //PATCH BUTTON FUNCTIONALITY HOLDER
   // document.addEventListener('click', e => {
 
@@ -250,5 +261,22 @@ document.addEventListener('DOMContentLoaded', function () {
   //   })
   // })
   //
+
+  function goalValue(difficulty_level){
+    let experience_value = 0
+    if (difficulty_level.length = 0){
+      experience_value = 0
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Easy")){
+      experience_value = 100
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Medium")){
+      experience_value= 200
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Hard")){
+      experience_value= 300
+    }
+    return experience_value
+  }
 
 });
