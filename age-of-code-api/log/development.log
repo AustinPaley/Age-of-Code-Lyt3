@@ -10037,3 +10037,17 @@ Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.6ms)
 Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 13:25:39 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 13:25:39 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 3.7ms)
+
+
+  [1m[36mAction Load (2.3ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 2.3ms)
+
+

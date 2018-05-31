@@ -30,7 +30,7 @@ button{
 #computer{
   position: relative;
   width:100%;
-  border: 5px solid red;
+  /* border: 5px solid red; */
 }
 
 #comp{
