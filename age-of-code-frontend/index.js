@@ -112,10 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       elem.style.width = `${width}%`;
       elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
-<<<<<<< HEAD
-=======
-      width = width / goalValue * 100;
->>>>>>> 72f5489c6b8e51fd6d2c3f0e7cff7ef5fbeb3587
     }
   }
 
