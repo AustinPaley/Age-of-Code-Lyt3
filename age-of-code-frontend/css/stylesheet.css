@@ -34,7 +34,7 @@ button{
 }
 
 #comp{
-  position:relative;
+  /* position:relative; */
   height:64.7vh;
   /* overflow: hidden; */
 }
