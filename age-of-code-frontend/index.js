@@ -15,6 +15,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const shop = document.createElement("DIV")
   shop.setAttribute("class", "shop")
   shop.innerHTML = "<h2 class='shop'>Buy New Hacks</h2><br>"
+
+  const difficulty = document.createElement('DIV')
+  difficulty.setAttribute("class", "difficulty")
+  difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
+  let experience = 0
+  const difficulty_easy = document.createElement('DIV')
+  difficulty_easy.setAttribute("class", "difficulty")
+  difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
+  rightContainer.appendChild(difficulty_easy)
+
+  const difficulty_medium = document.createElement('DIV')
+  difficulty_medium.setAttribute("class", "difficulty")
+  difficulty_medium.innerHTML = "<h2>Difficulty: Medium</h2>"
+  // rightContainer.appendChild(difficulty_medium)
+
+  const difficulty_Hard = document.createElement('DIV')
+  difficulty_Hard.setAttribute("class", "difficulty")
+  difficulty_Hard.innerHTML = "<h2>Difficulty: Hard</h2>"
+  // rightContainer.appendChild(difficulty_Hard)
+
+  const difficulty_level = document.getElementsByClassName('difficulty')
   //
 
   //USER GET
@@ -27,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
   function createUsers(userObj){
     permissions.push(userObj.permissions)
     let user = userObj.name
-    let experience = userObj.experience
+    experience = userObj.experience
     let userName = document.createElement("DIV")
     userName.setAttribute("id", "username")
-    userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> ${experience}`
+    userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> <p id="experience">${experience}</p>`
     mainContainer.append(userName)
   }
 
@@ -47,10 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //ACTION OBJECT PARSER
   function createActions(actionObj){
-    debugger
     //buttons are being added to the user
     let userPermissions = permissions[0]
-
     if (userPermissions.charAt(actionObj.id - 1) == 1){
       createButton(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)
     }
@@ -108,100 +127,171 @@ document.addEventListener('DOMContentLoaded', function () {
       shop.style.display="none";
     }
   })
+
+  //PATCH BUTTON FUNCTIONALITY HOLDER
+  // document.addEventListener('click', e => {
+
+  //   fetch('http://localhost:3000/api/v1/users/1', {
+  //     method: 'PATCH',
+  //     headers:{'Content-Type':'application/json'},
+  //     body:JSON.stringify({name: "Default", permissions: "11110000000", experience: 0})
+  //   })
+  // })
   //
+
+  function goalValue(difficulty_level){
+    let experience_value = 0
+    if (difficulty_level.length = 0){
+      experience_value = 0
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Easy")){
+      experience_value = 100
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Medium")){
+      experience_value= 200
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Hard")){
+      experience_value= 300
+    }
+    return experience_value
+  }
 
 });
 
-  // what happens when a skill button is pressed
-  function skillLogic(mathTarget, button, value, cd){
-    cooldown(button, cd)
-    doMath(mathTarget, value)
-    clicky(cd)
-    statusBar(value);
+function createButton(name, id, value, cd){
+  let button = document.createElement("BUTTON")
+  button.setAttribute("class", "action actionButton")
+  button.setAttribute("id", `skill${id}`)
+  button.innerHTML = `<div class="actionBar">${name}</div>`
+  button.addEventListener("click",() => skillLogic(val, button, value, cd))
+  button.addEventListener("click",() => postToScreen(name))
+  buttons.appendChild(button)
+}
+
+function skillLogic(mathTarget, button, value, cd){
+  cooldown(button, cd)
+  doMath(mathTarget, value)
+  clicky(cd)
+  statusBar(value);
+}
+
+function doMath(target, value){
+  target.innerHTML = parseInt(target.innerHTML) + value
+}
+
+function statusBar(value, goalValue) {
+  goalValue = 100 || goalValue;
+  var elem = document.getElementById("myBar");
+  var width = parseInt(elem.innerHTML) * 100 / goalValue;
+
+  if (width < 100) {
+    width += value;
+    if (width >= 100) {
+      width = 100
+      elem.style.width = `${width}%`;
+      elem.innerHTML = `${width * goalValue / 100} lines of working code!`;
+      let myEndingScore = 100;
+      setTimeout(() => {
+        winOrLose(myEndingScore);
+      }, 100);
+    }
+    elem.style.width = `${width}%`;
+    elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
   }
-
-  function doMath(target, value){
-    target.innerHTML = parseInt(target.innerHTML) + value
+}
+function winOrLose(myEndingScore, opponentScore=1) {
+  if (myEndingScore > opponentScore) {
+    experience = parseInt(experience.innerText) + 100
+    document.getElementById('experience').innerHTML = `${experience}`
+    fetch('http://localhost:3000/api/v1/users/1', {
+      method: 'PATCH',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name: "Default", permissions: "11110000000", experience: `${experience}`})
+    })
+    alert("You win!");
+  } else {
   }
+}
 
-  function statusBar(value, goalValue) {
-    goalValue = 100 || goalValue;
-    var elem = document.getElementById("myBar");
-    var width = parseInt(elem.innerHTML);
-    if (width < 100) {
-      width += value;
-      if (width >= 100) {
-        width = 100
-      }
-      elem.style.width = `${width / goalValue * 100}%`;
-      elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
-      width = width / goalValue * 100;
-    }
-  }
-
-  // handles
-  function clicky(num) {
-    var elem = event.currentTarget.querySelector(".actionBar")
-    var width = 1;
-    var id = setInterval(frame, (num/100));
-    elem.setAttribute("style", "opacity:.7;");
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        elem.setAttribute("style", "opacity:1;");
-        elem.style.width = '100%';
-      } else {
-        width++;
-        elem.style.width = width + '%';
-      }
-    }
-  }
-
-
-  function cooldown(button, cd){
-    button.setAttribute("disabled",true)
-    setTimeout(function(){
-      button.removeAttribute("disabled")
-    }, cd)
-  }
-
-  function postToScreen(buttonName){
-    var val = document.getElementById("val");
-    if (buttonName === "Git Push"){
-      val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
-    }
-
-    else if (buttonName === "Add Stylesheet"){
-      val.innerHTML = "> Creating stylesheet.css..." + "<br />"
-    }
-
-    else if (buttonName === "Read Stack Overflow"){
-      val.innerHTML = "> Navigating to stackoverflow.com..." + "<br />"
-    }
-
-    else if (buttonName === "Write Code"){
-      val.innerHTML = "> Writing amazing code to index.html..." + "<br />"
-    }
-
-    else if (buttonName === "Build Function"){
-      val.innerHTML = "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
-    }
-    else{
-      val.innerHTML = "> Doing super kewl stuff!"
+function clicky(num) {
+  var elem = event.currentTarget.querySelector(".actionBar")
+  var width = 1;
+  var id = setInterval(frame, (num/100));
+  elem.setAttribute("style", "opacity:.7;");
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      elem.setAttribute("style", "opacity:1;");
+      elem.style.width = '100%';
+    } else {
+      width++;
+      elem.style.width = width + '%';
     }
   }
+}
+
+
+function cooldown(button, cd){
+  button.setAttribute("disabled",true)
+  setTimeout(function(){
+    button.removeAttribute("disabled")
+  }, cd)
+}
+
 
   function shopHandler(name, id, value, cd){
     event.target.parentNode.parentNode.removeChild(event.target.parentNode)
     createButton(name, id, value, cd)
   }
 
-  function createButton(name, id, value, cd){
-    let button = document.createElement("BUTTON")
-    button.setAttribute("class", "action actionButton")
-    button.setAttribute("id", `skill${id}`)
-    button.innerHTML = `<div class="actionBar">${name}</div>`
-    button.addEventListener("click",() => skillLogic(val, button, value, cd))
-    button.addEventListener("click",() => postToScreen(name))
-    buttons.appendChild(button)
+
+function postToScreen(buttonName){
+  var val = document.getElementById("val");
+  if (buttonName === "Git Push"){
+    val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
   }
+
+  else if (buttonName === "Add Stylesheet"){
+    val.innerHTML = "> Creating stylesheet.css..." + "<br />"
+  }
+
+  else if (buttonName === "Read Stack Overflow"){
+    val.innerHTML = "> Navigating to stackoverflow.com..." + "<br />"
+  }
+
+  else if (buttonName === "Write Code"){
+    val.innerHTML = "> Writing amazing code to index.html..." + "<br />"
+  }
+
+  else if (buttonName === "Build Function"){
+    val.innerHTML = "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
+  }
+
+  else if (buttonName === "Build API"){
+    val.innerHTML = "=> Booting Puma" + "<br />" + "=> Rails 5.2.0 application starting in development " + "<br />" + "=> Run `rails server -h` for more startup options" + "<br />" + "Puma starting in single mode..." + "<br />" + "* Version 3.11.4 (ruby 2.3.3-p222), codename: Honestly, who comes up with the Rails codenames - they're ridiculous."
+  }
+
+  else if (buttonName === "Build Recurion"){
+    val.innerHTML = "> Is this recursion?" + "<br />" + "> Is this recurision? Is this recursion?" + "<br />" + "> Is this recursion? Is this recursion? Is this recursion?" + "<br />" + "> Is this recursion? Is this recursion? Is this recursion? Is this recursion?" + "<br />" + "> Is this recursion? Is this recursion? Is this recursion? Is this recursion? Is this..."
+  }
+
+  else if (buttonName === "Build For Loop"){
+    val.innerHTML = "> for (i=0; i<totaltimeplayed; i++){" + "<br />" + "> console.log('[i] loops are so much more sensible than for..in loops, seriously.')" + "}"
+  }
+
+  else if (buttonName === "Hire Intern"){
+    val.innerHTML = "> Opening Trello board" + "<br />" + "> Assigning all the work you don't want to a underqualified recent college graduate" + "<br />" + "> Not properly tracking intern's hours"
+  }
+
+  else if (buttonName === "Refactor Code"){
+    val.innerHTML = "> Opening index.html" + "<br />" + "> Scanning for possible refactoring opportunities" + "<br />" + "> Convincing yourself that you'll do this later"
+  }
+
+  else if (buttonName === "Touch Typing"){
+    val.innerHTML = "> Learning how to type more efficiently..."
+  }
+
+  else{
+    val.innerHTML = "> Doing super kewl stuff!"
+  }
+}
