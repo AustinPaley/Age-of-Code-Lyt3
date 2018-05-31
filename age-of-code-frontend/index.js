@@ -20,6 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
   difficulty.setAttribute("class", "difficulty")
   difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
   let experience = 0
+  const difficulty_easy = document.createElement('DIV')
+  difficulty_easy.setAttribute("class", "difficulty")
+  difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
+  rightContainer.appendChild(difficulty_easy)
+
+  const difficulty_medium = document.createElement('DIV')
+  difficulty_medium.setAttribute("class", "difficulty")
+  difficulty_medium.innerHTML = "<h2>Difficulty: Medium</h2>"
+  // rightContainer.appendChild(difficulty_medium)
+
+  const difficulty_Hard = document.createElement('DIV')
+  difficulty_Hard.setAttribute("class", "difficulty")
+  difficulty_Hard.innerHTML = "<h2>Difficulty: Hard</h2>"
+  // rightContainer.appendChild(difficulty_Hard)
+
+  const difficulty_level = document.getElementsByClassName('difficulty')
   //
 
   //USER GET
@@ -50,27 +66,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //ACTION OBJECT PARSER
   function createActions(actionObj){
+    //buttons are being added to the user
     let userPermissions = permissions[0]
-    let button = document.createElement("BUTTON")
-    button.setAttribute("class", "action")
-
-    button.setAttribute("class", "action actionButton")
-    button.setAttribute("id", `skill${actionObj.id}`)
     if (userPermissions.charAt(actionObj.id - 1) == 1){
-      button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
-      buttons.appendChild(button)
-      let skill = document.getElementById(`skill${actionObj.id}`)
-      skill.addEventListener("click",() => skillLogic(val, skill, actionObj.value, actionObj.cooldown))
-      skill.addEventListener("click",() => postToScreen(actionObj.name))
+      createButton(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)
     }
-    let button2 = document.createElement("BUTTON")
-    button2.setAttribute("class", "action")
-
-    button2.setAttribute("class", "action actionButton")
-    button2.setAttribute("id", `skill${actionObj.id}`)
-    if (userPermissions.charAt(actionObj.id - 1) != 1){
-      button2.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
-      shop.appendChild(button2)
+    else{
+      // adds the button to a "button div" to make it prettier
+      let shopButton = document.createElement("div")
+      shopButton.setAttribute("class", "buttcontainer")
+      shopButton.innerHTML = ` <p class="header">${actionObj.name}</p>`
+      shopButton.addEventListener("click", () => {createButton(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)} )
+      // add in
+      //<p class="flavor">${actionObj.flavor}</p>
+      //<p class="price">${actionObj.price}</p>
+      shop.appendChild(shopButton)
     }
   }
   //
@@ -235,11 +245,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  // EXPERIENCE UPDATE FUNCTIONALITY
-  // document.addEventListener('click', e => {
-  // })
-  //
-
   //PATCH BUTTON FUNCTIONALITY HOLDER
   // document.addEventListener('click', e => {
 
@@ -251,4 +256,31 @@ document.addEventListener('DOMContentLoaded', function () {
   // })
   //
 
+  function goalValue(difficulty_level){
+    let experience_value = 0
+    if (difficulty_level.length = 0){
+      experience_value = 0
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Easy")){
+      experience_value = 100
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Medium")){
+      experience_value= 200
+    }
+    else if(difficulty_level.length != 0 && difficulty_level[0].innerText.includes("Hard")){
+      experience_value= 300
+    }
+    return experience_value
+  }
+
 });
+
+function createButton(name, id, value, cd){
+  let button = document.createElement("BUTTON")
+  button.setAttribute("class", "action actionButton")
+  button.setAttribute("id", `skill${id}`)
+  button.innerHTML = `<div class="actionBar">${name}</div>`
+  button.addEventListener("click",() => skillLogic(val, button, value, cd))
+  button.addEventListener("click",() => postToScreen(name))
+  buttons.appendChild(button)
+}
