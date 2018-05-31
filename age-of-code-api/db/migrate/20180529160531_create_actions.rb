@@ -5,6 +5,7 @@ class CreateActions < ActiveRecord::Migration[5.2]
       t.integer :value
       t.integer :cooldown
       t.string :target
+      t.integer :price
 
       t.timestamps
     end
