@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const rightContainer = document.getElementById("main-container-right")
   const levelsofCode = {1: 100, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800, 9: 900, 10: 1000}
   const rightSection = document.querySelector("body > div > div:nth-child(4)")
-  cc
+  const shop = document.createElement("DIV")
+  shop.setAttribute("class", "shop")
+  shop.innerHTML = "<h2 class='shop'>Buy New Hacks</h2><br>"
   //
 
   //USER GET
@@ -41,32 +43,31 @@ document.addEventListener('DOMContentLoaded', function () {
   //
 
 
+
+
   //ACTION OBJECT PARSER
   function createActions(actionObj){
+    debugger
     //buttons are being added to the user
     let userPermissions = permissions[0]
-    let button = document.createElement("BUTTON")
-    button.setAttribute("class", "action")
 
-    button.setAttribute("class", "action actionButton")
-    button.setAttribute("id", `skill${actionObj.id}`)
     if (userPermissions.charAt(actionObj.id - 1) == 1){
-      button.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
-      buttons.appendChild(button)
-      let skill = document.getElementById(`skill${actionObj.id}`)
-      skill.addEventListener("click",() => skillLogic(val, skill, actionObj.value, actionObj.cooldown))
-      skill.addEventListener("click",() => postToScreen(actionObj.name))
+      createButton(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)
     }
-    //buttons are being added to the shop
-    let button2 = document.createElement("BUTTON")
-    button2.setAttribute("class", "action")
+    else{
+      // adds the button to a "button div" to make it prettier
+      let shopButton = document.createElement("div")
+      shopButton.setAttribute("class", "buttcontainer")
+      shopButton.innerHTML = `<p>${actionObj.name}</p>`
+      shopButton.addEventListener("click", () => {shopHandler(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)} )
+      // add in
+      //<p class="flavor">${actionObj.flavor}</p>
+      //<p class="price">${actionObj.price}</p>
 
-    button2.setAttribute("class", "action actionButton")
-    button2.setAttribute("id", `skill${actionObj.id}`)
-    if (userPermissions.charAt(actionObj.id - 1) != 1){
-      button2.innerHTML = `<div class="actionBar">${actionObj.name}</div>`
-      shop.appendChild(button2)
+
+      shop.appendChild(shopButton)
     }
+
   }
   //
 
@@ -88,32 +89,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let val = document.getElementById('val')
 
-  function postToScreen(buttonName){
-    var val = document.getElementById("val");
-    if (buttonName === "Git Push"){
-      val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
-    }
+  //SHOP BUTTON FUNCTIONALITY
 
-    else if (buttonName === "Add Stylesheet"){
-      val.innerHTML = "> Creating stylesheet.css..." + "<br />"
-    }
+  document.addEventListener("click", e =>{
+    if (e.target.id === "shopButton"){
+      rightContainer.style.display = "none";
+      shop.style.display = "block";
+      rightSection.appendChild(shop)
 
-    else if (buttonName === "Read Stack Overflow"){
-      val.innerHTML = "> Navigating to stackoverflow.com..." + "<br />"
     }
+  })
+  //
 
-    else if (buttonName === "Write Code"){
-      val.innerHTML = "> Writing amazing code to index.html..." + "<br />"
+  //PLAY BUTTON FUNCTIONALITY
+  document.addEventListener("click", e =>{
+    if (e.target.id === "playButton"){
+      rightContainer.style.display = "block";
+      shop.style.display="none";
     }
+  })
+  //
 
-    else if (buttonName === "Build Function"){
-      val.innerHTML = "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
-    }
-    else{
-      val.innerHTML = "> Doing super kewl stuff!"
-    }
-  }
-
+});
 
   // what happens when a skill button is pressed
   function skillLogic(mathTarget, button, value, cd){
@@ -142,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // handles
   function clicky(num) {
     var elem = event.currentTarget.querySelector(".actionBar")
     var width = 1;
@@ -167,37 +165,43 @@ document.addEventListener('DOMContentLoaded', function () {
     }, cd)
   }
 
-  //SHOP BUTTON FUNCTIONALITY
-
-  document.addEventListener("click", e =>{
-    if (e.target.id === "shopButton"){
-      rightContainer.style.display = "none";
-      shop.style.display = "block";
-      rightSection.appendChild(shop)
-
+  function postToScreen(buttonName){
+    var val = document.getElementById("val");
+    if (buttonName === "Git Push"){
+      val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
     }
-  })
-  //
 
-  //PLAY BUTTON FUNCTIONALITY
-  document.addEventListener("click", e =>{
-    if (e.target.id === "playButton"){
-      rightContainer.style.display = "block";
-      shop.style.display="none";
+    else if (buttonName === "Add Stylesheet"){
+      val.innerHTML = "> Creating stylesheet.css..." + "<br />"
     }
-  })
-  //
 
-  //USER PATCH
-  // document.addEventListener('click', e => {
-  //     debugger
-  //     fetch('http://localhost:3000/posts', {
-  //       method: 'PATCH',
-  //       headers:{'Content-Type':'application/json'},
-  //       body:JSON.stringify({title: e.target.parentNode.children[1].value, author: e.target.parentNode.children[3].value})
-  //     })
-  //   }
-  // })
-  //
+    else if (buttonName === "Read Stack Overflow"){
+      val.innerHTML = "> Navigating to stackoverflow.com..." + "<br />"
+    }
 
-});
+    else if (buttonName === "Write Code"){
+      val.innerHTML = "> Writing amazing code to index.html..." + "<br />"
+    }
+
+    else if (buttonName === "Build Function"){
+      val.innerHTML = "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
+    }
+    else{
+      val.innerHTML = "> Doing super kewl stuff!"
+    }
+  }
+
+  function shopHandler(name, id, value, cd){
+    event.target.parentNode.parentNode.removeChild(event.target.parentNode)
+    createButton(name, id, value, cd)
+  }
+
+  function createButton(name, id, value, cd){
+    let button = document.createElement("BUTTON")
+    button.setAttribute("class", "action actionButton")
+    button.setAttribute("id", `skill${id}`)
+    button.innerHTML = `<div class="actionBar">${name}</div>`
+    button.addEventListener("click",() => skillLogic(val, button, value, cd))
+    button.addEventListener("click",() => postToScreen(name))
+    buttons.appendChild(button)
+  }
