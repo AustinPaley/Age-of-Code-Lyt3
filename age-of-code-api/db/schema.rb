@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_05_29_160541) do
     t.integer "value"
     t.integer "cooldown"
     t.string "target"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

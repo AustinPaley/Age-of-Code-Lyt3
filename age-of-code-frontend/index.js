@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const rightContainer = document.getElementById("main-container-right")
   const levelsofCode = {1: 100, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800, 9: 900, 10: 1000}
   const rightSection = document.querySelector("body > div > div:nth-child(4)")
-  const shop = document.createElement("DIV")
-  shop.setAttribute("class", "shop")
-  shop.innerHTML = "<h2 class='shop'>Buy New Hacks</h2><br>"
+  cc
   //
 
   //USER GET
@@ -188,6 +186,18 @@ document.addEventListener('DOMContentLoaded', function () {
       shop.style.display="none";
     }
   })
+  //
+
+  //USER PATCH
+  // document.addEventListener('click', e => {
+  //     debugger
+  //     fetch('http://localhost:3000/posts', {
+  //       method: 'PATCH',
+  //       headers:{'Content-Type':'application/json'},
+  //       body:JSON.stringify({title: e.target.parentNode.children[1].value, author: e.target.parentNode.children[3].value})
+  //     })
+  //   }
+  // })
   //
 
 });
