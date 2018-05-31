@@ -127,3 +127,25 @@ html {
 div.shop > h2{
   text-align: center;
 }
+
+.shop{
+  background-color: blue; 
+}
+
+.buttcontainer{
+ background-color:gray;
+ border-style:solid;
+ margin-top:5px;
+ margin-bottom:5px;
+ border-radius:15px 50px;
+}
+
+.shopButton{
+ margin-left:50px;
+}
+
+div.buttcontainer > p{
+ font-weight: bold;
+ font-size:20px;
+ margin-left:5px;
+}
