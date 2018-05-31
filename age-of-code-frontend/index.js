@@ -105,13 +105,27 @@ document.addEventListener('DOMContentLoaded', function () {
     goalValue = 100 || goalValue;
     var elem = document.getElementById("myBar");
     var width = parseInt(elem.innerHTML) * 100 / goalValue;
+    
     if (width < 100) {
       width += value;
       if (width >= 100) {
         width = 100
+        elem.style.width = `${width}%`;
+        elem.innerHTML = `${width * goalValue / 100} lines of working code!`;
+        let myEndingScore = 100;
+        setTimeout(() => {
+          winOrLose(myEndingScore);
+        }, 100);
       }
       elem.style.width = `${width}%`;
       elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
+    } 
+  }
+
+  function winOrLose(myEndingScore, opponentScore=1) {
+    if (myEndingScore > opponentScore) {
+      alert("You win!");
+    } else {
     }
   }
 
