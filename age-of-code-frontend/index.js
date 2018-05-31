@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
   //
 
 
+
+
   //ACTION OBJECT PARSER
   function createActions(actionObj){
     //buttons are being added to the user
@@ -75,13 +77,16 @@ document.addEventListener('DOMContentLoaded', function () {
       // adds the button to a "button div" to make it prettier
       let shopButton = document.createElement("div")
       shopButton.setAttribute("class", "buttcontainer")
-      shopButton.innerHTML = ` <p class="header">${actionObj.name}</p>`
-      shopButton.addEventListener("click", () => {createButton(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)} )
+      shopButton.innerHTML = `<p>${actionObj.name}</p>`
+      shopButton.addEventListener("click", () => {shopHandler(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)} )
       // add in
       //<p class="flavor">${actionObj.flavor}</p>
       //<p class="price">${actionObj.price}</p>
+
+
       shop.appendChild(shopButton)
     }
+
   }
   //
 
@@ -232,6 +237,12 @@ function cooldown(button, cd){
     button.removeAttribute("disabled")
   }, cd)
 }
+
+
+  function shopHandler(name, id, value, cd){
+    event.target.parentNode.parentNode.removeChild(event.target.parentNode)
+    createButton(name, id, value, cd)
+  }
 
 
 function postToScreen(buttonName){
