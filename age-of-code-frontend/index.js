@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const difficulty_easy = document.createElement('DIV')
   difficulty_easy.setAttribute("class", "difficulty")
   difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
-  rightContainer.appendChild(difficulty_easy)
+  // rightContainer.appendChild(difficulty_easy)
 
   const difficulty_medium = document.createElement('DIV')
   difficulty_medium.setAttribute("class", "difficulty")
