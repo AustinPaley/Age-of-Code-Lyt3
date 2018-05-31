@@ -12,7 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const rightContainer = document.getElementById("main-container-right")
   const levelsofCode = {1: 100, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800, 9: 900, 10: 1000}
   const rightSection = document.querySelector("body > div > div:nth-child(4)")
-  cc
+  const shop = document.createElement("DIV")
+  shop.setAttribute("class", "shop")
+  shop.innerHTML = "<h2 class='shop'>Buy New Hacks</h2><br>"
+
+  const difficulty = document.createElement('DIV')
+  difficulty.setAttribute("class", "difficulty")
+  difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
+  let experience = 0
   //
 
   //USER GET
@@ -25,10 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
   function createUsers(userObj){
     permissions.push(userObj.permissions)
     let user = userObj.name
-    let experience = userObj.experience
+    experience = userObj.experience
     let userName = document.createElement("DIV")
     userName.setAttribute("id", "username")
-    userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> ${experience}`
+    userName.innerHTML = `<u>User:</u> ${user}` + "<br />" + `<u>Experience:</u> <p id="experience">${experience}</p>`
     mainContainer.append(userName)
   }
 
@@ -107,6 +114,31 @@ document.addEventListener('DOMContentLoaded', function () {
     else if (buttonName === "Build Function"){
       val.innerHTML = "> bestFunctionEver(){" + "<br />" + "> console.log('HELLO WORLD')" + "<br />" + "> }" + "<br />"
     }
+
+    else if (buttonName === "Build API"){
+      val.innerHTML = "=> Booting Puma" + "<br />" + "=> Rails 5.2.0 application starting in development " + "<br />" + "=> Run `rails server -h` for more startup options" + "<br />" + "Puma starting in single mode..." + "<br />" + "* Version 3.11.4 (ruby 2.3.3-p222), codename: Honestly, who comes up with the Rails codenames - they're ridiculous."
+    }
+
+    else if (buttonName === "Build Recurion"){
+      val.innerHTML = "> Is this recursion?" + "<br />" + "> Is this recurision? Is this recursion?" + "<br />" + "> Is this recursion? Is this recursion? Is this recursion?" + "<br />" + "> Is this recursion? Is this recursion? Is this recursion? Is this recursion?" + "<br />" + "> Is this recursion? Is this recursion? Is this recursion? Is this recursion? Is this..."
+    }
+
+    else if (buttonName === "Build For Loop"){
+      val.innerHTML = "> for (i=0; i<totaltimeplayed; i++){" + "<br />" + "> console.log('[i] loops are so much more sensible than for..in loops, seriously.')" + "}"
+    }
+
+    else if (buttonName === "Hire Intern"){
+      val.innerHTML = "> Opening Trello board" + "<br />" + "> Assigning all the work you don't want to a underqualified recent college graduate" + "<br />" + "> Not properly tracking intern's hours"
+    }
+
+    else if (buttonName === "Refactor Code"){
+      val.innerHTML = "> Opening index.html" + "<br />" + "> Scanning for possible refactoring opportunities" + "<br />" + "> Convincing yourself that you'll do this later"
+    }
+
+    else if (buttonName === "Touch Typing"){
+      val.innerHTML = "> Learning how to type more efficiently..."
+    }
+
     else{
       val.innerHTML = "> Doing super kewl stuff!"
     }
@@ -182,17 +214,27 @@ document.addEventListener('DOMContentLoaded', function () {
       shop.style.display="none";
     }
   })
+
+  // EXPERIENCE UPDATE FUNCTIONALITY
+  // document.addEventListener('click', e => {
+  //   experience += 100
+  //   document.getElementById('experience').innerHTML = `${experience}`
+  //   fetch('http://localhost:3000/api/v1/users/1', {
+  //     method: 'PATCH',
+  //     headers:{'Content-Type':'application/json'},
+  //     body:JSON.stringify({name: "Default", permissions: "11110000000", experience: `${experience}`})
+  //   })
+  // })
   //
 
-  //USER PATCH
+  //PATCH BUTTON FUNCTIONALITY HOLDER
   // document.addEventListener('click', e => {
-  //     debugger
-  //     fetch('http://localhost:3000/posts', {
-  //       method: 'PATCH',
-  //       headers:{'Content-Type':'application/json'},
-  //       body:JSON.stringify({title: e.target.parentNode.children[1].value, author: e.target.parentNode.children[3].value})
-  //     })
-  //   }
+
+  //   fetch('http://localhost:3000/api/v1/users/1', {
+  //     method: 'PATCH',
+  //     headers:{'Content-Type':'application/json'},
+  //     body:JSON.stringify({name: "Default", permissions: "11110000000", experience: 0})
+  //   })
   // })
   //
 

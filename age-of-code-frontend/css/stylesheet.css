@@ -30,11 +30,11 @@ button{
 #computer{
   position: relative;
   width:100%;
-  /* border: 5px solid red; */
+  border: 5px solid red;
 }
 
 #comp{
-  position:relative;
+  /* position:relative; */
   height:64.7vh;
   /* overflow: hidden; */
 }
