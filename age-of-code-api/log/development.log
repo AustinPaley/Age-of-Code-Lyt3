@@ -2449,7 +2449,6 @@ Processing by Api::V1::UsersController#index as */*
 Processing by Api::V1::ActionsController#index as */*
   [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   ↳ app/controllers/api/v1/users_controller.rb:4
-<<<<<<< HEAD
 Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 2.2ms)
 
 
@@ -2689,275 +2688,6 @@ Processing by Api::V1::ActionsController#index as */*
   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   ↳ app/controllers/api/v1/users_controller.rb:4
 Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.9ms)
-=======
-Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 2.2ms)
-
-
-  [1m[36mAction Load (5.0ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 5.0ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:03:56 -0400
-Processing by Api::V1::ActionsController#index as */*
-  [1m[36mAction Load (0.6ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:03:56 -0400
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 2.9ms)
-
-
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:21 -0400
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:21 -0400
-Processing by Api::V1::UsersController#index as */*
-Processing by Api::V1::ActionsController#index as */*
-  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.9ms)
-
-
-  [1m[36mAction Load (2.6ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 2.6ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:32 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:32 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (9.6ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 13ms (Views: 3.4ms | ActiveRecord: 9.6ms)
-
-
-  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 14ms (Views: 1.7ms | ActiveRecord: 12.2ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:36 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:36 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (0.9ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.9ms)
-
-
-  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 3.9ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:39 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:39 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (0.7ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.7ms)
-
-
-  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 5.9ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:42 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:42 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (2.4ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 2.4ms)
-
-
-  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 5.1ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:45 -0400
-Processing by Api::V1::ActionsController#index as */*
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:45 -0400
-  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms)
-
-
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 6.6ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:49 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:49 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (1.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.2ms)
-
-
-  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 3.9ms)
-
-
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:52 -0400
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:52 -0400
-Processing by Api::V1::UsersController#index as */*
-Processing by Api::V1::ActionsController#index as */*
-  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 11ms (Views: 1.7ms | ActiveRecord: 8.8ms)
-
-
-  [1m[36mAction Load (4.3ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 15ms (Views: 5.4ms | ActiveRecord: 4.3ms)
-
-
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:04:57 -0400
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:04:57 -0400
-Processing by Api::V1::UsersController#index as */*
-Processing by Api::V1::ActionsController#index as */*
-  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.4ms)
-
-
-  [1m[36mAction Load (2.4ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 2.4ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:00 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:00 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (0.8ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.6ms)
-
-
-Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.8ms)
-
-
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:16 -0400
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:16 -0400
-Processing by Api::V1::UsersController#index as */*
-Processing by Api::V1::ActionsController#index as */*
-  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.7ms)
-
-
-  [1m[36mAction Load (2.1ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 2.1ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:25 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:25 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (2.3ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 2.3ms)
-
-
-  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 3.6ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:35 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:35 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (2.0ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 2.0ms)
-
-
-  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 4.8ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:39 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:39 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (1.8ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.8ms)
-
-
-Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:43 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:43 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (3.0ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 3.0ms)
-
-
-  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 3.6ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:49 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:49 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (2.0ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 2.0ms)
-
-
-  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 3.4ms)
-
-
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:53 -0400
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:53 -0400
-Processing by Api::V1::ActionsController#index as */*
-Processing by Api::V1::UsersController#index as */*
-  [1m[36mAction Load (1.0ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
-  ↳ app/controllers/api/v1/actions_controller.rb:4
-Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 1.0ms)
-
-
-  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 4.5ms)
-
-
-Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-29 17:05:57 -0400
-Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-29 17:05:57 -0400
-Processing by Api::V1::UsersController#index as */*
-Processing by Api::V1::ActionsController#index as */*
-  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/controllers/api/v1/users_controller.rb:4
-Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms)
->>>>>>> 8b9c55ce318fcd071e91b4f05f6253a2c7300537
 
 
   [1m[36mAction Load (1.7ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
@@ -8222,3 +7952,310 @@ Migrating to CreateUserActions (20180529160541)
 >>>>>>> 0153c14945e431f17d81b74d9e965061d71781ce
 =======
 >>>>>>> 9cad54e3250fa2cc58a9cefef6f490ad869cc051
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 14:02:33 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 14:02:33 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (0.8ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 46ms (Views: 13.7ms | ActiveRecord: 11.9ms)
+
+
+Completed 200 OK in 57ms (Views: 12.9ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 14:02:35 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 14:02:35 -0400
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (1.6ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 4.7ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (217.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "age-of-code-2_development"[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (159.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "age-of-code-2_test"[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2889.0ms)[0m  [1m[35mCREATE DATABASE "age-of-code-2_development" ENCODING = 'unicode'[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (567.6ms)[0m  [1m[35mCREATE DATABASE "age-of-code-2_test" ENCODING = 'unicode'[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35mSQL (45.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (7.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "actions" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "actions" ("id" bigserial primary key, "name" character varying, "value" integer, "cooldown" integer, "target" character varying, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_actions" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (29.2ms)[0m  [1m[35mCREATE TABLE "user_actions" ("id" bigserial primary key, "user_id" integer, "action_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:35
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "experience" integer, "permissions" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:35
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529160541)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529160507),
+(20180529160531);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-31 18:03:14.686694"], ["updated_at", "2018-05-31 18:03:14.686694"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "actions" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE "actions" ("id" bigserial primary key, "name" character varying, "value" integer, "cooldown" integer, "target" character varying, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_actions" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "user_actions" ("id" bigserial primary key, "user_id" integer, "action_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:35
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "experience" integer, "permissions" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:35
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529160541)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529160507),
+(20180529160531);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-31 18:03:14.834478"], ["updated_at", "2018-05-31 18:03:14.834478"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-05-31 18:03:14.842505"], ["key", "environment"]]
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "experience", "permissions", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Default"], ["experience", 0], ["permissions", "11110000000"], ["created_at", "2018-05-31 18:03:14.941717"], ["updated_at", "2018-05-31 18:03:14.941717"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAction Create (0.9ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Git Push"], ["value", 15], ["cooldown", 5000], ["target", "You"], ["price", 0], ["created_at", "2018-05-31 18:03:14.966743"], ["updated_at", "2018-05-31 18:03:14.966743"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAction Create (0.6ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Add Stylesheet"], ["value", 20], ["cooldown", 30000], ["target", "You"], ["price", 0], ["created_at", "2018-05-31 18:03:14.971260"], ["updated_at", "2018-05-31 18:03:14.971260"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAction Create (0.4ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Read Stack Overflow"], ["value", 10], ["cooldown", 10000], ["target", "You"], ["price", 0], ["created_at", "2018-05-31 18:03:14.975049"], ["updated_at", "2018-05-31 18:03:14.975049"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAction Create (0.4ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Write Code"], ["value", 1], ["cooldown", 1000], ["target", "You"], ["price", 0], ["created_at", "2018-05-31 18:03:14.977540"], ["updated_at", "2018-05-31 18:03:14.977540"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Build Function"], ["value", 5], ["cooldown", 3000], ["target", "You"], ["price", 100], ["created_at", "2018-05-31 18:03:14.980352"], ["updated_at", "2018-05-31 18:03:14.980352"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mAction Create (0.4ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Build API"], ["value", 60], ["cooldown", 50000], ["target", "You"], ["price", 600], ["created_at", "2018-05-31 18:03:14.983146"], ["updated_at", "2018-05-31 18:03:14.983146"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Build Recursion"], ["value", 20], ["cooldown", 15000], ["target", "You"], ["price", 400], ["created_at", "2018-05-31 18:03:14.985869"], ["updated_at", "2018-05-31 18:03:14.985869"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Build For Loop"], ["value", 10], ["cooldown", 7000], ["target", "You"], ["price", 200], ["created_at", "2018-05-31 18:03:14.989321"], ["updated_at", "2018-05-31 18:03:14.989321"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Hire Intern"], ["value", 15], ["cooldown", 7000], ["target", "You"], ["price", 1000], ["created_at", "2018-05-31 18:03:14.992080"], ["updated_at", "2018-05-31 18:03:14.992080"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Refactor Code"], ["value", 5], ["cooldown", 2000], ["target", "You"], ["price", 300], ["created_at", "2018-05-31 18:03:14.995404"], ["updated_at", "2018-05-31 18:03:14.995404"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mAction Create (0.5ms)[0m  [1m[32mINSERT INTO "actions" ("name", "value", "cooldown", "target", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Touch Typing"], ["value", 2], ["cooldown", 1500], ["target", "You"], ["price", 20], ["created_at", "2018-05-31 18:03:14.998787"], ["updated_at", "2018-05-31 18:03:14.998787"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mAction Load (0.4ms)[0m  [1m[34mSELECT  "actions".* FROM "actions" WHERE "actions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mUserAction Create (0.8ms)[0m  [1m[32mINSERT INTO "user_actions" ("user_id", "action_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["action_id", 1], ["created_at", "2018-05-31 18:03:15.086969"], ["updated_at", "2018-05-31 18:03:15.086969"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mAction Load (0.3ms)[0m  [1m[34mSELECT  "actions".* FROM "actions" WHERE "actions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mUserAction Create (0.4ms)[0m  [1m[32mINSERT INTO "user_actions" ("user_id", "action_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["action_id", 4], ["created_at", "2018-05-31 18:03:15.091774"], ["updated_at", "2018-05-31 18:03:15.091774"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 14:04:03 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 14:04:03 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ActionsController#index as */*
+  [1m[35m (16.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (3.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 37ms (Views: 15.1ms | ActiveRecord: 16.5ms)
+
+
+Completed 200 OK in 37ms (Views: 10.8ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 14:04:19 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 14:04:19 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mAction Load (2.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 14:04:30 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 14:04:30 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mAction Load (3.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 3.2ms)
+
+
+Started PATCH "/api/v1/users/1" for 127.0.0.1 at 2018-05-31 14:05:26 -0400
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"name"=>"Default", "permissions"=>"11110000000", "experience"=>"100", "id"=>"1", "user"=>{"name"=>"Default", "experience"=>"100", "permissions"=>"11110000000"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+Unpermitted parameter: :permissions
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "experience" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["experience", 100], ["updated_at", "2018-05-31 18:05:26.086404"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+  [1m[35m (27.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17
+Completed 204 No Content in 61ms (ActiveRecord: 29.6ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 14:43:46 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 14:43:46 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mAction Load (2.4ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 2.4ms)
+
+
