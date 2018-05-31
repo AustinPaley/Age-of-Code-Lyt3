@@ -156,7 +156,12 @@ document.addEventListener('DOMContentLoaded', function () {
     return experience_value
   }
 
+  const goalValueNow = goalValue(difficulty_level);
+  statusBarElem = document.getElementById("myBar");
+  statusBarElem.dataset.goalValue = goalValueNow;
+
 });
+
 
 function createButton(name, id, value, cd){
   let button = document.createElement("BUTTON")
@@ -179,15 +184,14 @@ function doMath(target, value){
   target.innerHTML = parseInt(target.innerHTML) + value
 }
 
-const goalValue = goalValue(difficulty_medium);
-
-function statusBar(value, goalValue) {
-  goalValue = 100 || goalValue;
+function statusBar(value, goalValue=100) {
   var elem = document.getElementById("myBar");
+  goalValueNow = elem.dataset.goalValue;
+  goalValue = goalValueNow;
   var width = parseInt(elem.innerHTML) * 100 / goalValue;
-
+  
   if (width < 100) {
-    width += value;
+    width += value * 100 / goalValue;
     if (width >= 100) {
       width = 100;
       elem.style.width = `${width}%`;
@@ -203,7 +207,9 @@ function statusBar(value, goalValue) {
 }
 function winOrLose(myEndingScore, opponentScore=1) {
   if (myEndingScore > opponentScore) {
-    experience = parseInt(experience.innerText) + 100
+    var elem = document.getElementById("myBar");
+    goalValueNow = parseInt(elem.dataset.goalValue);
+    experience = parseInt(experience.innerText) + goalValueNow;
     document.getElementById('experience').innerHTML = `${experience}`
     fetch('http://localhost:3000/api/v1/users/1', {
       method: 'PATCH',
