@@ -8259,3 +8259,77 @@ Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 1.3ms)
 Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 2.4ms)
 
 
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 15:13:00 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 15:13:00 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mAction Load (2.1ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 15:21:05 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 15:21:05 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.7ms)
+
+
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mAction Load (1.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 15:21:46 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 15:21:46 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mAction Load (2.0ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 15:22:47 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 15:22:47 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mAction Load (1.9ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-31 15:51:36 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-31 15:51:36 -0400
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/OWLbook/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  [1m[36mAction Load (2.8ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 40ms (Views: 13.8ms | ActiveRecord: 10.2ms)
+
+
+Completed 200 OK in 56ms (Views: 19.3ms | ActiveRecord: 21.8ms)
+
+

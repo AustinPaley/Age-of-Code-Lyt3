@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const difficulty_easy = document.createElement('DIV')
   difficulty_easy.setAttribute("class", "difficulty")
   difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
-  rightContainer.appendChild(difficulty_easy)
+  // rightContainer.appendChild(difficulty_easy)
 
   const difficulty_medium = document.createElement('DIV')
   difficulty_medium.setAttribute("class", "difficulty")
   difficulty_medium.innerHTML = "<h2>Difficulty: Medium</h2>"
-  // rightContainer.appendChild(difficulty_medium)
+  rightContainer.appendChild(difficulty_medium)
 
   const difficulty_Hard = document.createElement('DIV')
   difficulty_Hard.setAttribute("class", "difficulty")
@@ -174,6 +174,8 @@ function doMath(target, value){
   target.innerHTML = parseInt(target.innerHTML) + value
 }
 
+const goalValue = goalValue(difficulty_medium);
+
 function statusBar(value, goalValue) {
   goalValue = 100 || goalValue;
   var elem = document.getElementById("myBar");
@@ -182,7 +184,7 @@ function statusBar(value, goalValue) {
   if (width < 100) {
     width += value;
     if (width >= 100) {
-      width = 100
+      width = 100;
       elem.style.width = `${width}%`;
       elem.innerHTML = `${width * goalValue / 100} lines of working code!`;
       let myEndingScore = 100;
@@ -191,7 +193,7 @@ function statusBar(value, goalValue) {
       }, 100);
     }
     elem.style.width = `${width}%`;
-    elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
+    elem.innerHTML = `${width * goalValue / 100} lines of working code!`;
   }
 }
 function winOrLose(myEndingScore, opponentScore=1) {
