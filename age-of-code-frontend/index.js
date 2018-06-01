@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div id="aimyProgress" class="myProgress">
           <div id="aimyBar" class="myBar">0 lines of working code!</div>
         </div>
-        <p id="aival">0</p>
+        <p id="aival"></p>
 
 
       </div>
@@ -191,6 +191,7 @@ displayplay(7)
     let curButtons = allButtons.slice(0,num)
     let aimyBar = document.getElementById('aimyBar')
     aimyBar.setAttribute('data-goal', `${a[num]}`)
+    myBar.setAttribute('data-goal', `${a[num]}`)
     for (actionObj of curButtons){
       aiCreateButton(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)
     }
@@ -202,6 +203,10 @@ displayplay(7)
     if (rightContainer.querySelector(".difficulty")){
       rightContainer.querySelector(".difficulty").remove()
     }
+
+    setTimeout(function(){
+      ai.begin()
+    },1000)
   }
   //
 
@@ -276,26 +281,24 @@ function statusBar(value, ai=false) {
   if (ai){
     bar = "aimyBar"
   }
-  debugger
   var elem = document.getElementById(bar);
   var goalValue = elem.dataset.goal
   var width = parseInt(elem.innerHTML) * 100 / goalValue;
 
   if (width < 100) {
-    width += value;
+    width += value / (goalValue/100);
     if (width >= 100) {
       width = 100
       elem.style.width = `${width}%`;
-      elem.innerHTML = `${width * goalValue / 100} lines of working code!`;
+      elem.innerHTML = `${Math.round(width * goalValue / 100)} lines of working code!`;
       let myEndingScore = 100;
       setTimeout(() => {
         winOrLose(myEndingScore);
       }, 100);
     }
     elem.style.width = `${width}%`;
-    elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
+    elem.innerHTML = `${Math.round(width * goalValue / 100 )} lines of working code!`;
   }
-  debugger
 }
 
 function winOrLose(myEndingScore, opponentScore=1) {
@@ -336,6 +339,26 @@ function cooldown(button, cd){
     button.removeAttribute("disabled")
   }, cd)
 }
+
+
+let ai = {interval:null}
+ai['difficulty'] = [0,1000,0,700,0,500]
+ai['begin'] = () => {
+  let dif = document.getElementById('aimyBar')
+  let index = dif.dataset.goal.slice(0,1)
+  interval = setInterval(function(){
+    let computerButtons = document.getElementById('computerButtons').children
+    rand = computerButtons[Math.floor(Math.random() * computerButtons.length)]
+    rand.click()
+  }, ai.difficulty[index])
+}
+ai['stop'] = () => {
+  clearInterval(interval)
+}
+
+
+
+
 
 
   function shopHandler(name, id, value, cd){
