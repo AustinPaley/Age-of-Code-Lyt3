@@ -168,11 +168,13 @@ div.buttcontainer > p{
 }
 
 .difficultydiv{
+  height:60px;
   background-color:gray;
   border-style:solid;
+  padding-top:
   margin-top:5px;
   margin-bottom:5px;
   border-radius:15px 50px;
   font-weight: bold;
-  font-size:20px;
+  font-size:30px;
 }
