@@ -57,12 +57,12 @@ button{
   font-size:14px;
 }
 
-#myProgress {
+.myProgress {
   width: 100%;
   background-color: #ddd;
 }
 
-#myBar {
+.myBar {
   width: 0%;
   height: 30px;
   background-color: #4CAF50;

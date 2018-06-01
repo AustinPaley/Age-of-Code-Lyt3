@@ -1,4 +1,5 @@
 let permissions = []
+let allButtons = [];
 document.addEventListener('DOMContentLoaded', function () {
   // GLOBAL CONSTANTS
   const mainContainer = document.getElementById("main-container");
@@ -10,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const compScreen = document.getElementById("compScreen")
   const compSection = document.getElementById("computer")
   const rightContainer = document.getElementById("main-container-right")
-  const levelsofCode = {1: 100, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800, 9: 900, 10: 1000}
   const rightSection = document.querySelector("body > div > div:nth-child(4)")
   const shop = document.createElement("DIV")
   shop.setAttribute("class", "shop")
@@ -20,8 +20,31 @@ document.addEventListener('DOMContentLoaded', function () {
   difficultyContainer.setAttribute("class", "difficulty_selector")
   difficultyContainer.innerHTML = "<h2 class='difficultyh2'>Select Your Difficulty</h2><br><div class='difficultydiv'>Easy</div><div class='difficultydiv'>Medium</div><div class='difficultydiv'>Hard</div>"
 
+//reset function   *******
+  function aiReset(){
+    document.getElementById('computerGoesHere').innerHTML = `<div id="aicomputer">
+      <img id="comp" src="computerImg.png" />
+
+      <div>
+
+      </div>
+      <div id="compScreen">
 
 
+      <!-- <div id='user-data'></div> -->
+        <h4>Completed Lines of Working Code</h4>
+        <div id="aimyProgress" class="myProgress">
+          <div id="aimyBar" class="myBar">0 lines of working code!</div>
+        </div>
+        <p id="aival">0</p>
+
+
+      </div>
+      <div id="computerButtons"></div>
+    </div>`
+  }
+  aiReset()
+//******************
   const difficulty = document.createElement('DIV')
   difficulty.setAttribute("class", "difficulty")
   difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
@@ -70,13 +93,11 @@ document.addEventListener('DOMContentLoaded', function () {
   .then(jsondata => jsondata.forEach( actionObj => {createActions(actionObj)} ))
   //
 
-
-
-
   //action or shop button maker
   //makes either action buttons on the user screen or makes buttons
   // on the shop screen
   function createActions(actionObj){
+    allButtons.push(actionObj)
     //buttons are being added to the user
     let userPermissions = permissions[0]
     if (userPermissions.charAt(actionObj.id - 1) == 1){
@@ -144,26 +165,31 @@ document.addEventListener('DOMContentLoaded', function () {
   //START CODING FUNCTIONALITY
   difficultyContainer.addEventListener("click", e =>{
     if (e.target.innerText === "Easy"){
-      displayplay()
-      // rightContainer.removeChild(difficulty_medium)
-      // rightContainer.removeChild(difficulty_Hard)
+      displayplay(3)
       rightContainer.appendChild(difficulty_easy)
     }
     if (e.target.innerText === "Medium"){
-displayplay()
-      // rightContainer.removeChild(difficulty_easy)
-      // rightContainer.removeChild(difficulty_Hard)
+displayplay(5)
       rightContainer.appendChild(difficulty_medium)
     }
     if (e.target.innerText === "Hard"){
-displayplay()
-      // rightContainer.children.remove()
-      // rightContainer.removeChild(difficulty_medium)
+displayplay(7)
       rightContainer.appendChild(difficulty_Hard)
     }
   })
 
-  function displayplay(){
+  function displayplay(num){
+    let a = [0,0,0,100,0,300,0,500]
+    aiReset()
+    let aiButtons = document.getElementById('computerButtons')
+    let curButtons = allButtons.slice(0,num)
+    let aimyBar = document.getElementById('aimyBar')
+    aimyBar.setAttribute('data-goal', `${a[num]}`)
+    for (actionObj of curButtons){
+      aiCreateButton(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)
+    }
+
+
     difficultyContainer.style.display = "none";
     shop.style.display="none";
     rightContainer.style.display="block";
@@ -171,18 +197,6 @@ displayplay()
       rightContainer.querySelector(".difficulty").remove()
     }
   }
-  //
-
-
-  //PATCH BUTTON FUNCTIONALITY HOLDER
-  // document.addEventListener('click', e => {
-
-  //   fetch('http://localhost:3000/api/v1/users/1', {
-  //     method: 'PATCH',
-  //     headers:{'Content-Type':'application/json'},
-  //     body:JSON.stringify({name: "Default", permissions: "11110000000", experience: 0})
-  //   })
-  // })
   //
 
   function goalValue(difficulty_level){
@@ -219,21 +233,40 @@ function createButton(name, id, value, cd){
   buttons.appendChild(button)
 }
 
-function skillLogic(mathTarget, button, value, cd){
+function aiCreateButton(name, id, value, cd){
+  let aiButtons = document.getElementById('computerButtons')
+  let aiVal = document.getElementById('aival')
+  let button = document.createElement("BUTTON")
+  button.setAttribute("class", "action actionButton")
+  button.setAttribute("id", `skill${id}`)
+  button.innerHTML = `<div class="actionBar">${name}</div>`
+  button.addEventListener("click",() => skillLogic(aiVal, button, value, cd, true))
+  button.addEventListener("click",() => postToScreen(name,true))
+  aiButtons.appendChild(button)
+
+}
+
+
+function skillLogic(mathTarget, button, value, cd, ai=false){
   cooldown(button, cd)
   doMath(mathTarget, value)
   clicky(cd)
-  statusBar(value);
+  statusBar(value, ai);
 }
 
 function doMath(target, value){
   target.innerHTML = parseInt(target.innerHTML) + value
 }
 
-function statusBar(value, goalValue=100) {
-  var elem = document.getElementById("myBar");
-  goalValueNow = elem.dataset.goalValue;
-  goalValue = goalValueNow;
+function statusBar(value, ai=false) {
+
+  let bar = "myBar"
+  if (ai){
+    bar = "aimyBar"
+  }
+  debugger
+  var elem = document.getElementById(bar);
+  var goalValue = elem.dataset.goal
   var width = parseInt(elem.innerHTML) * 100 / goalValue;
   
   if (width < 100) {
@@ -250,7 +283,9 @@ function statusBar(value, goalValue=100) {
     elem.style.width = `${width}%`;
     elem.innerHTML = `${width * goalValue / 100} lines of working code!`;
   }
+  debugger
 }
+
 function winOrLose(myEndingScore, opponentScore=1) {
   if (myEndingScore > opponentScore) {
     var elem = document.getElementById("myBar");
@@ -260,7 +295,7 @@ function winOrLose(myEndingScore, opponentScore=1) {
     fetch('http://localhost:3000/api/v1/users/1', {
       method: 'PATCH',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name: "Default", permissions: "11110000000", experience: `${Newexperience}`})
+      body:JSON.stringify({name: "Default", experience: `${Newexperience}`})
     })
     alert("You win!");
   } else {
@@ -284,14 +319,12 @@ function clicky(num) {
   }
 }
 
-
 function cooldown(button, cd){
   button.setAttribute("disabled",true)
   setTimeout(function(){
     button.removeAttribute("disabled")
   }, cd)
 }
-
 
   function shopHandler(name, id, value, cd){
     let money = parseInt(experience.innerHTML)
@@ -300,12 +333,28 @@ function cooldown(button, cd){
       experience.innerHTML = money - price
       event.currentTarget.parentNode.removeChild(event.currentTarget)
       createButton(name, id, value, cd)
+        let allPermissions = document.getElementsByClassName('action actionButton')
+        let permittedActions = [0,0,0,0,0,0,0,0,0,0,0]
+        for (i=0; i<allPermissions.length; i++){
+          if (allPermissions[i] && parseInt(allPermissions[i].id.slice(5)) > 0){
+            permittedActions[parseInt(allPermissions[i].id.slice(5)) - 1] = 1
+          }
+        }
+        let finalActions = permittedActions.join("")
+        fetch('http://localhost:3000/api/v1/users/1', {
+          method: 'PATCH',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({name: "Default", permissions: `${finalActions}`, experience: `${money - price}`})
+        })
+      }
     }
-  }
 
 
-function postToScreen(buttonName){
+function postToScreen(buttonName,ai=false){
   var val = document.getElementById("val");
+  if (ai){
+    val = document.getElementById("aival");
+  }
   if (buttonName === "Git Push"){
     val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
   }
