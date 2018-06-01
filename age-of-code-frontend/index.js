@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const compScreen = document.getElementById("compScreen")
   const compSection = document.getElementById("computer")
   const rightContainer = document.getElementById("main-container-right")
-  const levelsofCode = {1: 100, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600, 7: 700, 8: 800, 9: 900, 10: 1000}
   const rightSection = document.querySelector("body > div > div:nth-child(4)")
   const shop = document.createElement("DIV")
   shop.setAttribute("class", "shop")
@@ -41,8 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       </div>
-      <div id="computerButtons"></div>
-    </div>`
+    </div>
+    `
+    document.getElementById('computerButtons').innerHTML = ""
   }
   aiReset()
 //******************
@@ -89,9 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
   .then(response => response.json())
   .then(jsondata => jsondata.forEach( actionObj => {createActions(actionObj)} ))
   //
-
-
-
 
   //action or shop button maker
   //makes either action buttons on the user screen or makes buttons
@@ -165,22 +162,31 @@ document.addEventListener('DOMContentLoaded', function () {
   //START CODING FUNCTIONALITY
   difficultyContainer.addEventListener("click", e =>{
     if (e.target.innerText === "Easy"){
+      let rightSide = document.getElementById('computerGoesHere')
       displayplay(3)
-      // rightContainer.removeChild(difficulty_medium)
-      // rightContainer.removeChild(difficulty_Hard)
-      rightContainer.appendChild(difficulty_easy)
+      let computername = document.createElement('DIV')
+      computername.setAttribute("id", "username")
+      computername.innerHTML = `<u>User:</u> Computer<br> <u>Experience:</u><br>"What's an experience?"`
+      rightSide.appendChild(computername)
+      rightSide.appendChild(difficulty_easy)
     }
     if (e.target.innerText === "Medium"){
-displayplay(5)
-      // rightContainer.removeChild(difficulty_easy)
-      // rightContainer.removeChild(difficulty_Hard)
-      rightContainer.appendChild(difficulty_medium)
+      let rightSide = document.getElementById('computerGoesHere')
+      displayplay(5)
+      let computername = document.createElement('DIV')
+      computername.setAttribute("id", "username")
+      computername.innerHTML = `<u>User:</u> Computer<br> <u>Experience:</u><br>Some experience!`
+      rightSide.appendChild(computername)
+      rightSide.appendChild(difficulty_medium)
     }
     if (e.target.innerText === "Hard"){
-displayplay(7)
-      // rightContainer.children.remove()
-      // rightContainer.removeChild(difficulty_medium)
-      rightContainer.appendChild(difficulty_Hard)
+      let rightSide = document.getElementById('computerGoesHere')
+      displayplay(7)
+      let computername = document.createElement('DIV')
+      computername.setAttribute("id", "username")
+      computername.innerHTML = `<u>User:</u> Computer<br> <u>Experience:</u><br>ALL the experience!`
+      rightSide.appendChild(computername)
+      rightSide.appendChild(difficulty_Hard)
     }
   })
 
@@ -208,18 +214,6 @@ displayplay(7)
       ai.begin()
     },1000)
   }
-  //
-
-
-  //PATCH BUTTON FUNCTIONALITY HOLDER
-  // document.addEventListener('click', e => {
-
-  //   fetch('http://localhost:3000/api/v1/users/1', {
-  //     method: 'PATCH',
-  //     headers:{'Content-Type':'application/json'},
-  //     body:JSON.stringify({name: "Default", permissions: "11110000000", experience: 0})
-  //   })
-  // })
   //
 
   function goalValue(difficulty_level){
@@ -308,7 +302,7 @@ function winOrLose(myEndingScore, opponentScore=1) {
     fetch('http://localhost:3000/api/v1/users/1', {
       method: 'PATCH',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name: "Default", permissions: "11110000000", experience: `${Newexperience}`})
+      body:JSON.stringify({name: "Default", experience: `${Newexperience}`})
     })
     alert("You win!");
   } else {
@@ -332,7 +326,6 @@ function clicky(num) {
   }
 }
 
-
 function cooldown(button, cd){
   button.setAttribute("disabled",true)
   setTimeout(function(){
@@ -340,6 +333,7 @@ function cooldown(button, cd){
   }, cd)
 }
 
+<<<<<<< HEAD
 
 let ai = {interval:null}
 ai['difficulty'] = [0,1000,0,700,0,500]
@@ -361,6 +355,8 @@ ai['stop'] = () => {
 
 
 
+=======
+>>>>>>> fb0f72046cd80b65dcd18e5c58f8ed7d8174dcc3
   function shopHandler(name, id, value, cd){
     let money = parseInt(experience.innerHTML)
     let price = event.currentTarget.dataset.price
