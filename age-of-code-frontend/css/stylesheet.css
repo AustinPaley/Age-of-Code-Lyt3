@@ -41,9 +41,9 @@ button{
 
 #compScreen{
   position:absolute;
-  top: 8%;
-  height: 17.25vw;
-  width: 28.2vw;
+  top: 5.80%;
+  height: 18vw;
+  width: 29.8vw;
   transform: translateX(15%);
   background-color: black;
   border-radius:3%;
@@ -74,12 +74,16 @@ button{
 
 
 html {
-  overflow:   scroll;
+    overflow: scroll;
+    overflow-x: hidden;
 }
-
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #000000;
 }
 
 .actionButton{
@@ -130,7 +134,6 @@ div.shop > h2{
 }
 
 .shop{
-  background-color: blue;
   max-height: 500px;
   overflow:scroll;
 }
