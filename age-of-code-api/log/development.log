@@ -1038,3 +1038,171 @@ Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.6ms)
 Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:06:20 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:06:20 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.7ms)
+
+
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/v1/users/1" for 127.0.0.1 at 2018-06-01 12:06:52 -0400
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"name"=>"Default", "experience"=>"800", "id"=>"1", "user"=>{"name"=>"Default", "experience"=>"800"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "experience" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["experience", 800], ["updated_at", "2018-06-01 16:06:52.970263"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17
+Completed 204 No Content in 10ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:12:07 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:12:07 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.5ms)
+
+
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mAction Load (0.9ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:13:08 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:13:08 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 1.2ms)
+
+
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:13:19 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:13:19 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+
+
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:13:33 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:13:33 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  [1m[36mAction Load (0.6ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.7ms)
+
+
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:17:14 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:17:14 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/v1/users/1" for 127.0.0.1 at 2018-06-01 12:17:22 -0400
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"name"=>"Default", "permissions"=>"11110100000", "experience"=>"200", "id"=>"1", "user"=>{"name"=>"Default", "experience"=>"200", "permissions"=>"11110100000"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17
+  [1m[36mUser Update (2.9ms)[0m  [1m[33mUPDATE "users" SET "experience" = $1, "permissions" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["experience", 200], ["permissions", "11110100000"], ["updated_at", "2018-06-01 16:17:22.745864"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17
+Completed 204 No Content in 14ms (ActiveRecord: 6.6ms)
+
+
+Started PATCH "/api/v1/users/1" for 127.0.0.1 at 2018-06-01 12:17:23 -0400
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"name"=>"Default", "permissions"=>"11110101000", "experience"=>"0", "id"=>"1", "user"=>{"name"=>"Default", "experience"=>"0", "permissions"=>"11110101000"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "experience" = $1, "permissions" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["experience", 0], ["permissions", "11110101000"], ["updated_at", "2018-06-01 16:17:23.209388"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17
+Completed 204 No Content in 12ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:18:19 -0400
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:18:19 -0400
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (0.6ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+
+
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:19:08 -0400
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:19:08 -0400
+Processing by Api::V1::ActionsController#index as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-06-01 12:19:10 -0400
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-06-01 12:19:10 -0400
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::ActionsController#index as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mAction Load (1.1ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+  ↳ app/controllers/api/v1/actions_controller.rb:4
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.1ms)
+
+

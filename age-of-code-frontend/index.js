@@ -23,25 +23,30 @@ document.addEventListener('DOMContentLoaded', function () {
 //reset function   *******
   function aiReset(){
     document.getElementById('computerGoesHere').innerHTML = `<div id="aicomputer">
-      <img id="comp" src="computerImg.png" />
-
-      <div>
-
-      </div>
-      <div id="compScreen">
-
-
-      <!-- <div id='user-data'></div> -->
-        <h4>Completed Lines of Working Code</h4>
-        <div id="aimyProgress" class="myProgress">
-          <div id="aimyBar" class="myBar">0 lines of working code!</div>
-        </div>
-        <p id="aival"></p>
-
-
-      </div>
-    </div>
+                                                              <img id="comp" src="computerImg.png" />
+                                                              <div>
+                                                              </div>
+                                                              <div id="compScreen">
+                                                              <!-- <div id='user-data'></div> -->
+                                                                <h4>Completed Lines of Working Code</h4>
+                                                                <div id="aimyProgress" class="myProgress">
+                                                                  <div id="aimyBar" class="myBar">0 lines of working code!</div>
+                                                                </div>
+                                                                <p id="aival"></p>
+                                                              </div>
+                                                            </div>
     `
+    document.getElementById('main-container').innerHTML = `<div id="computer">
+                                                <img id="comp" src="computerImg.png" />
+                                              <div id="compScreen">
+                                            <div id='user-data'></div>
+                                              <h4>Completed Lines of Working Code</h4>
+                                              <div id="myProgress" class="myProgress">
+                                                <div id="myBar" class="myBar">0 lines of working code!</div>
+                                              </div>
+                                              <p id="val"></p>
+                                            </div>
+                                          </div>`
     document.getElementById('computerButtons').innerHTML = ""
   }
   aiReset()
@@ -248,7 +253,7 @@ function aiCreateButton(name, id, value, cd){
   let aiButtons = document.getElementById('computerButtons')
   let aiVal = document.getElementById('aival')
   let button = document.createElement("BUTTON")
-  button.setAttribute("class", "action actionButton")
+  button.setAttribute("class", "action actionButton ai")
   button.setAttribute("id", `skill${id}`)
   button.innerHTML = `<div class="actionBar">${name}</div>`
   button.addEventListener("click",() => skillLogic(aiVal, button, value, cd, true))
@@ -304,6 +309,7 @@ function winOrLose(myEndingScore, opponentScore=1) {
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name: "Default", experience: `${Newexperience}`})
     })
+    ai.stop()
     alert("You win!");
   } else {
   }
