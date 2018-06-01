@@ -305,29 +305,46 @@ function statusBar(value, ai=false) {
   }
 }
 
+// sounds will buffer automatically when created
 function playBumpSound() {
-  var bump = new Audio("https://flukeout.github.io/simple-sounds/sounds/bump.mp3"); // buffers automatically when created
+  var bump = new Audio("https://flukeout.github.io/simple-sounds/sounds/bump.mp3");
   bump.play();
 }
 function playCoinSound() {
-  var coin = new Audio("https://flukeout.github.io/simple-sounds/sounds/coin.mp3"); // buffers automatically when created
+  var coin = new Audio("https://flukeout.github.io/simple-sounds/sounds/coin.mp3");
   coin.play();
 }
 function playDeadSound () {
-  var dead = new Audio("https://flukeout.github.io/simple-sounds/sounds/dead.wav"); // buffers automatically when created
+  var dead = new Audio("https://flukeout.github.io/simple-sounds/sounds/dead.wav");
   dead.play();
 }
 function playJumpSound() {
-  var jump = new Audio("https://flukeout.github.io/simple-sounds/sounds/jump.wav"); // buffers automatically when created
+  var jump = new Audio("https://flukeout.github.io/simple-sounds/sounds/jump.wav");
   jump.play();
 }
 function playPingSound() {
-  var ping = new Audio("https://flukeout.github.io/simple-sounds/sounds/ping.mp3"); // buffers automatically when created
+  var ping = new Audio("https://flukeout.github.io/simple-sounds/sounds/ping.mp3");
   ping.play();
 }
 function playSmashSound() {
-  var smash = new Audio("https://flukeout.github.io/simple-sounds/sounds/smash.mp3"); // buffers automatically when created
+  var smash = new Audio("https://flukeout.github.io/simple-sounds/sounds/smash.mp3");
   smash.play();
+}
+function playExplosionSound() {
+  var explosion = new Audio("https://actions.google.com/sounds/v1/weapons/big_explosion_cut_off.ogg");
+  explosion.play();
+}
+function playMachineGunSound() {
+  var machineGun = new Audio("https://actions.google.com/sounds/v1/weapons/machine_gun_hit_car.ogg");
+  machineGun.play();
+}
+function playLongAutoGunSound() {
+  var autoGun = new Audio("https://actions.google.com/sounds/v1/weapons/automatic_gun.ogg");
+  autoGun.play();
+}
+function playMetalDropSound() {
+  var metalDrop = new Audio("https://actions.google.com/sounds/v1/weapons/metal_drop.ogg");
+  metalDrop.play();
 }
 
 function winOrLose(myEndingScore, opponentScore=1) {
