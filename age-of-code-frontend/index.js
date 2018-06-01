@@ -114,7 +114,9 @@ document.addEventListener('DOMContentLoaded', function () {
       shopButton.innerHTML = `<p>${actionObj.name}</p>
                               <p class="price">${actionObj.price}</p>`
       shopButton.setAttribute("data-price", actionObj.price)
-      shopButton.addEventListener("click", () => {shopHandler(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)} )
+      shopButton.addEventListener("click", () => {
+        shopHandler(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)
+      } )
       // add in
       //<p class="flavor">${actionObj.flavor}</p>
       //<p class="price">${actionObj.price}</p>
@@ -147,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener("click", e =>{
     if (e.target.id === "shopButton"){
+      ai.stop()
       rightContainer.style.display = "none";
       shop.style.display = "block";
       difficultyContainer.style.display = "none";
@@ -276,6 +279,7 @@ function skillLogic(mathTarget, button, value, cd, ai=false){
   doMath(mathTarget, value)
   clicky(cd)
   statusBar(value, ai);
+  playDeadSound ()
 }
 
 function doMath(target, value){
@@ -318,8 +322,10 @@ function winOrLose(aii) {
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name: "Default", experience: `${Newexperience}`})
     })
+    playJumpSound()
     alert("You win!");
   } else {
+    playBumpSound()
     alert("you lose... =(")
   }
 }
@@ -400,6 +406,7 @@ ai['stop'] = () => {
     if (money >= price){
       experience.innerHTML = money - price
       event.currentTarget.parentNode.removeChild(event.currentTarget)
+      playCoinSound()
       createButton(name, id, value, cd)
         let allPermissions = document.getElementsByClassName('action actionButton')
         let permittedActions = [0,0,0,0,0,0,0,0,0,0,0]
@@ -416,6 +423,12 @@ ai['stop'] = () => {
         })
       }
     }
+
+    // fetch('http://localhost:3000/api/v1/users/1', {
+    //   method: 'PATCH',
+    //   headers:{'Content-Type':'application/json'},
+    //   body:JSON.stringify({name: "Default", permissions: `11100000000`, experience: `0`})
+    // })
 
 
 function postToScreen(buttonName,ai=false){
