@@ -1,4 +1,5 @@
 let permissions = []
+let allButtons = [];
 document.addEventListener('DOMContentLoaded', function () {
   // GLOBAL CONSTANTS
   const mainContainer = document.getElementById("main-container");
@@ -20,8 +21,31 @@ document.addEventListener('DOMContentLoaded', function () {
   difficultyContainer.setAttribute("class", "difficulty_selector")
   difficultyContainer.innerHTML = "<h2 class='difficultyh2'>Select Your Difficulty</h2><br><div class='difficultydiv'>Easy</div><div class='difficultydiv'>Medium</div><div class='difficultydiv'>Hard</div>"
 
+//reset function   *******
+  function aiReset(){
+    document.getElementById('computerGoesHere').innerHTML = `<div id="aicomputer">
+      <img id="comp" src="computerImg.png" />
+
+      <div>
+
+      </div>
+      <div id="compScreen">
 
 
+      <!-- <div id='user-data'></div> -->
+        <h4>Completed Lines of Working Code</h4>
+        <div id="aimyProgress" class="myProgress">
+          <div id="aimyBar" class="myBar">0 lines of working code!</div>
+        </div>
+        <p id="aival">0</p>
+
+
+      </div>
+      <div id="computerButtons"></div>
+    </div>`
+  }
+  aiReset()
+//******************
   const difficulty = document.createElement('DIV')
   difficulty.setAttribute("class", "difficulty")
   difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
@@ -73,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //makes either action buttons on the user screen or makes buttons
   // on the shop screen
   function createActions(actionObj){
+    allButtons.push(actionObj)
     //buttons are being added to the user
     let userPermissions = permissions[0]
     if (userPermissions.charAt(actionObj.id - 1) == 1){
@@ -140,26 +165,37 @@ document.addEventListener('DOMContentLoaded', function () {
   //START CODING FUNCTIONALITY
   difficultyContainer.addEventListener("click", e =>{
     if (e.target.innerText === "Easy"){
-      displayplay()
+      displayplay(3)
       // rightContainer.removeChild(difficulty_medium)
       // rightContainer.removeChild(difficulty_Hard)
       rightContainer.appendChild(difficulty_easy)
     }
     if (e.target.innerText === "Medium"){
-displayplay()
+displayplay(5)
       // rightContainer.removeChild(difficulty_easy)
       // rightContainer.removeChild(difficulty_Hard)
       rightContainer.appendChild(difficulty_medium)
     }
     if (e.target.innerText === "Hard"){
-displayplay()
+displayplay(7)
       // rightContainer.children.remove()
       // rightContainer.removeChild(difficulty_medium)
       rightContainer.appendChild(difficulty_Hard)
     }
   })
 
-  function displayplay(){
+  function displayplay(num){
+    let a = [0,0,0,100,0,300,0,500]
+    aiReset()
+    let aiButtons = document.getElementById('computerButtons')
+    let curButtons = allButtons.slice(0,num)
+    let aimyBar = document.getElementById('aimyBar')
+    aimyBar.setAttribute('data-goal', `${a[num]}`)
+    for (actionObj of curButtons){
+      aiCreateButton(actionObj.name, actionObj.id, actionObj.value, actionObj.cooldown)
+    }
+
+
     difficultyContainer.style.display = "none";
     shop.style.display="none";
     rightContainer.style.display="block";
@@ -209,20 +245,40 @@ function createButton(name, id, value, cd){
   buttons.appendChild(button)
 }
 
-function skillLogic(mathTarget, button, value, cd){
+function aiCreateButton(name, id, value, cd){
+  let aiButtons = document.getElementById('computerButtons')
+  let aiVal = document.getElementById('aival')
+  let button = document.createElement("BUTTON")
+  button.setAttribute("class", "action actionButton")
+  button.setAttribute("id", `skill${id}`)
+  button.innerHTML = `<div class="actionBar">${name}</div>`
+  button.addEventListener("click",() => skillLogic(aiVal, button, value, cd, true))
+  button.addEventListener("click",() => postToScreen(name,true))
+  aiButtons.appendChild(button)
+
+}
+
+
+function skillLogic(mathTarget, button, value, cd, ai=false){
   cooldown(button, cd)
   doMath(mathTarget, value)
   clicky(cd)
-  statusBar(value);
+  statusBar(value, ai);
 }
 
 function doMath(target, value){
   target.innerHTML = parseInt(target.innerHTML) + value
 }
 
-function statusBar(value, goalValue) {
-  goalValue = 100 || goalValue;
-  var elem = document.getElementById("myBar");
+function statusBar(value, ai=false) {
+
+  let bar = "myBar"
+  if (ai){
+    bar = "aimyBar"
+  }
+  debugger
+  var elem = document.getElementById(bar);
+  var goalValue = elem.dataset.goal
   var width = parseInt(elem.innerHTML) * 100 / goalValue;
 
   if (width < 100) {
@@ -239,7 +295,9 @@ function statusBar(value, goalValue) {
     elem.style.width = `${width}%`;
     elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
   }
+  debugger
 }
+
 function winOrLose(myEndingScore, opponentScore=1) {
   if (myEndingScore > opponentScore) {
     Newexperience = parseInt(experience.innerText) + 100
@@ -304,8 +362,11 @@ function cooldown(button, cd){
     }
 
 
-function postToScreen(buttonName){
+function postToScreen(buttonName,ai=false){
   var val = document.getElementById("val");
+  if (ai){
+    val = document.getElementById("aival");
+  }
   if (buttonName === "Git Push"){
     val.innerHTML = "> Pushing..." + "<br />" + "> Counting objects: 78, done." + "<br />" + "> remote: Resolving deltas: 100% (1/1), completed with 1 local object." + "<br />" + "> To github.com:BESTCODEREVAR/Age-Of-Code.git" + "<br />"
   }
