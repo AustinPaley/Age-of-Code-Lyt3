@@ -288,20 +288,17 @@ function cooldown(button, cd){
       event.currentTarget.parentNode.removeChild(event.currentTarget)
       createButton(name, id, value, cd)
         let allPermissions = document.getElementsByClassName('action actionButton')
-        let permittedActions = ""
-        for (i=0; i<11; i++){
+        let permittedActions = [0,0,0,0,0,0,0,0,0,0,0]
+        for (i=0; i<allPermissions.length; i++){
           if (allPermissions[i] && parseInt(allPermissions[i].id.slice(5)) > 0){
-            permittedActions += 1
-          }
-          else if (i){
-            permittedActions += 0
+            permittedActions[parseInt(allPermissions[i].id.slice(5)) - 1] = 1
           }
         }
-        debugger
+        let finalActions = permittedActions.join("")
         fetch('http://localhost:3000/api/v1/users/1', {
           method: 'PATCH',
           headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({name: "Default", permissions: `${permittedActions}`, experience: `${money - price}`})
+          body:JSON.stringify({name: "Default", permissions: `${finalActions}`, experience: `${money - price}`})
         })
       }
     }
