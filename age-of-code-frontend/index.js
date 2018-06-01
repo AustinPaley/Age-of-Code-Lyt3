@@ -36,12 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
         <div id="aimyProgress" class="myProgress">
           <div id="aimyBar" class="myBar">0 lines of working code!</div>
         </div>
-        <p id="aival">0</p>
+        <p id="aival"></p>
 
 
       </div>
-      <div id="computerButtons"></div>
-    </div>`
+    </div>
+    `
+    document.getElementById('computerButtons').innerHTML = ""
   }
   aiReset()
 //******************
@@ -161,16 +162,31 @@ document.addEventListener('DOMContentLoaded', function () {
   //START CODING FUNCTIONALITY
   difficultyContainer.addEventListener("click", e =>{
     if (e.target.innerText === "Easy"){
+      let rightSide = document.getElementById('computerGoesHere')
       displayplay(3)
-      rightContainer.appendChild(difficulty_easy)
+      let computername = document.createElement('DIV')
+      computername.setAttribute("id", "username")
+      computername.innerHTML = `<u>User:</u> Computer<br> <u>Experience:</u><br>"What's an experience?"`
+      rightSide.appendChild(computername)
+      rightSide.appendChild(difficulty_easy)
     }
     if (e.target.innerText === "Medium"){
-displayplay(5)
-      rightContainer.appendChild(difficulty_medium)
+      let rightSide = document.getElementById('computerGoesHere')
+      displayplay(5)
+      let computername = document.createElement('DIV')
+      computername.setAttribute("id", "username")
+      computername.innerHTML = `<u>User:</u> Computer<br> <u>Experience:</u><br>Some experience!`
+      rightSide.appendChild(computername)
+      rightSide.appendChild(difficulty_medium)
     }
     if (e.target.innerText === "Hard"){
-displayplay(7)
-      rightContainer.appendChild(difficulty_Hard)
+      let rightSide = document.getElementById('computerGoesHere')
+      displayplay(7)
+      let computername = document.createElement('DIV')
+      computername.setAttribute("id", "username")
+      computername.innerHTML = `<u>User:</u> Computer<br> <u>Experience:</u><br>ALL the experience!`
+      rightSide.appendChild(computername)
+      rightSide.appendChild(difficulty_Hard)
     }
   })
 
@@ -254,7 +270,6 @@ function statusBar(value, ai=false) {
   if (ai){
     bar = "aimyBar"
   }
-  debugger
   var elem = document.getElementById(bar);
   var goalValue = elem.dataset.goal
   var width = parseInt(elem.innerHTML) * 100 / goalValue;
@@ -273,7 +288,6 @@ function statusBar(value, ai=false) {
     elem.style.width = `${width}%`;
     elem.innerHTML = `${width * goalValue / 100 } lines of working code!`;
   }
-  debugger
 }
 
 function winOrLose(myEndingScore, opponentScore=1) {

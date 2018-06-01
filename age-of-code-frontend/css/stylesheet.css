@@ -41,9 +41,9 @@ button{
 
 #compScreen{
   position:absolute;
-  top: 8%;
-  height: 17.25vw;
-  width: 28.2vw;
+  top: 5.80%;
+  height: 18vw;
+  width: 29.8vw;
   transform: translateX(15%);
   background-color: black;
   border-radius:3%;
