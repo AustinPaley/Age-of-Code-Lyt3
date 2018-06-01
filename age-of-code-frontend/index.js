@@ -57,14 +57,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const difficulty_easy = document.createElement('DIV')
   difficulty_easy.setAttribute("class", "difficulty")
   difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
+  // rightContainer.appendChild(difficulty_easy)
 
   const difficulty_medium = document.createElement('DIV')
   difficulty_medium.setAttribute("class", "difficulty")
   difficulty_medium.innerHTML = "<h2>Difficulty: Medium</h2>"
+  rightContainer.appendChild(difficulty_medium)
 
   const difficulty_Hard = document.createElement('DIV')
   difficulty_Hard.setAttribute("class", "difficulty")
   difficulty_Hard.innerHTML = "<h2>Difficulty: Hard</h2>"
+  // rightContainer.appendChild(difficulty_hard)
 
   const difficulty_level = document.getElementsByClassName('difficulty')
   //
@@ -236,7 +239,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     return experience_value
   }
+
+  const goalValueNow = goalValue(difficulty_level);
+  statusBarElem = document.getElementById("myBar");
+  statusBarElem.dataset.goalValue = goalValueNow;
+
 });
+
 
 function createButton(name, id, value, cd){
   let button = document.createElement("BUTTON")
@@ -286,7 +295,7 @@ function statusBar(value, ai=false) {
   if (width < 100) {
     width += value / (goalValue/100);
     if (width >= 100) {
-      width = 100
+      width = 100;
       elem.style.width = `${width}%`;
       elem.innerHTML = `${Math.round(width * goalValue / 100)} lines of working code!`;
       let myEndingScore = 100;
@@ -313,6 +322,31 @@ function winOrLose(aii) {
   } else {
     alert("you lose... =(")
   }
+}
+
+function playBumpSound() {
+  var bump = new Audio("https://flukeout.github.io/simple-sounds/sounds/bump.mp3"); // buffers automatically when created
+  bump.play();
+}
+function playCoinSound() {
+  var coin = new Audio("https://flukeout.github.io/simple-sounds/sounds/coin.mp3"); // buffers automatically when created
+  coin.play();
+}
+function playDeadSound () {
+  var dead = new Audio("https://flukeout.github.io/simple-sounds/sounds/dead.wav"); // buffers automatically when created
+  dead.play();
+}
+function playJumpSound() {
+  var jump = new Audio("https://flukeout.github.io/simple-sounds/sounds/jump.wav"); // buffers automatically when created
+  jump.play();
+}
+function playPingSound() {
+  var ping = new Audio("https://flukeout.github.io/simple-sounds/sounds/ping.mp3"); // buffers automatically when created
+  ping.play();
+}
+function playSmashSound() {
+  var smash = new Audio("https://flukeout.github.io/simple-sounds/sounds/smash.mp3"); // buffers automatically when created
+  smash.play();
 }
 
 function clicky(num) {
