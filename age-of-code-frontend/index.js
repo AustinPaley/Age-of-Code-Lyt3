@@ -286,6 +286,31 @@ function statusBar(value, ai=false) {
   debugger
 }
 
+function playBumpSound() {
+  var bump = new Audio("https://flukeout.github.io/simple-sounds/sounds/bump.mp3"); // buffers automatically when created
+  bump.play();
+}
+function playCoinSound() {
+  var coin = new Audio("https://flukeout.github.io/simple-sounds/sounds/coin.mp3"); // buffers automatically when created
+  coin.play();
+}
+function playDeadSound () {
+  var dead = new Audio("https://flukeout.github.io/simple-sounds/sounds/dead.wav"); // buffers automatically when created
+  dead.play();
+}
+function playJumpSound() {
+  var jump = new Audio("https://flukeout.github.io/simple-sounds/sounds/jump.wav"); // buffers automatically when created
+  jump.play();
+}
+function playPingSound() {
+  var ping = new Audio("https://flukeout.github.io/simple-sounds/sounds/ping.mp3"); // buffers automatically when created
+  ping.play();
+}
+function playSmashSound() {
+  var smash = new Audio("https://flukeout.github.io/simple-sounds/sounds/smash.mp3"); // buffers automatically when created
+  smash.play();
+}
+
 function winOrLose(myEndingScore, opponentScore=1) {
   if (myEndingScore > opponentScore) {
     var elem = document.getElementById("myBar");
