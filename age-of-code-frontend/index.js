@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                               </div>
                                                             </div>
     `
-    document.getElementById('main-container').innerHTML = `<div id="computer">
-                                                <img id="comp" src="computerImg.png" />
+    document.getElementById('computer').innerHTML = `<img id="comp" src="computerImg.png" />
                                               <div id="compScreen">
                                             <div id='user-data'></div>
                                               <h4>Completed Lines of Working Code</h4>
@@ -46,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 <div id="myBar" class="myBar">0 lines of working code!</div>
                                               </div>
                                               <p id="val"></p>
-                                            </div>
-                                          </div>`
+                                            </div>`
     document.getElementById('computerButtons').innerHTML = ""
   }
   aiReset()
