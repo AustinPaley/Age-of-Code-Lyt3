@@ -291,7 +291,7 @@ function statusBar(value, ai=false) {
       elem.innerHTML = `${Math.round(width * goalValue / 100)} lines of working code!`;
       let myEndingScore = 100;
       setTimeout(() => {
-        winOrLose(myEndingScore);
+        winOrLose(ai);
       }, 100);
     }
     elem.style.width = `${width}%`;
@@ -299,9 +299,9 @@ function statusBar(value, ai=false) {
   }
 }
 
-function winOrLose(myEndingScore, opponentScore=1) {
-  if (myEndingScore > opponentScore) {
-    debugger
+function winOrLose(aii) {
+  ai.stop()
+  if (!aii) {
     Newexperience = parseInt(experience.innerText) + 100
     document.getElementById('experience').innerHTML = `${Newexperience}`
     fetch('http://localhost:3000/api/v1/users/1', {
@@ -309,9 +309,9 @@ function winOrLose(myEndingScore, opponentScore=1) {
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name: "Default", experience: `${Newexperience}`})
     })
-    ai.stop()
     alert("You win!");
   } else {
+    alert("you lose... =(")
   }
 }
 

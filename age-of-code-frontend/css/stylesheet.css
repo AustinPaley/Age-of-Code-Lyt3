@@ -171,7 +171,8 @@ div.buttcontainer > p{
   height:60px;
   background-color:gray;
   border-style:solid;
-  padding-top:
+  padding-top:15px;
+  padding-left:25px;
   margin-top:5px;
   margin-bottom:5px;
   border-radius:15px 50px;
