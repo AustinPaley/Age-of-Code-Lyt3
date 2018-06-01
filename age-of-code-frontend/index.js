@@ -333,7 +333,6 @@ function cooldown(button, cd){
   }, cd)
 }
 
-<<<<<<< HEAD
 
 let ai = {interval:null}
 ai['difficulty'] = [0,1000,0,700,0,500]
@@ -355,8 +354,6 @@ ai['stop'] = () => {
 
 
 
-=======
->>>>>>> fb0f72046cd80b65dcd18e5c58f8ed7d8174dcc3
   function shopHandler(name, id, value, cd){
     let money = parseInt(experience.innerHTML)
     let price = event.currentTarget.dataset.price
