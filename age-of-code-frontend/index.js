@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const rightContainer = document.getElementById("main-container-right")
   const rightSection = document.querySelector("body > div > div:nth-child(4)")
   const shop = document.createElement("DIV")
+  let experience = 0
   shop.setAttribute("class", "shop")
   shop.innerHTML = "<h2 class='shop'>Buy New Hacks</h2><br>"
 
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const difficulty = document.createElement('DIV')
   difficulty.setAttribute("class", "difficulty")
   difficulty.innerHTML = "<h2>Choose Your Difficulty</h2><br>"
-  let experience = 0
+
   const difficulty_easy = document.createElement('DIV')
   difficulty_easy.setAttribute("class", "difficulty")
   difficulty_easy.innerHTML = "<h2>Difficulty: Easy</h2>"
@@ -302,6 +303,7 @@ function statusBar(value, ai=false) {
 
 function winOrLose(myEndingScore, opponentScore=1) {
   if (myEndingScore > opponentScore) {
+    debugger
     Newexperience = parseInt(experience.innerText) + 100
     document.getElementById('experience').innerHTML = `${Newexperience}`
     fetch('http://localhost:3000/api/v1/users/1', {
